@@ -17,7 +17,7 @@ function setup() {
   circle(187, 200, 150);
 
   stroke("green");
-  circle(362, 200, 150)
+  circle(362, 200, 150);
 
 
 
