@@ -1,5 +1,4 @@
-function setup() {
-    createCanvas(700, 700);
+function setup() {createCanvas(700, 700);
     background("skyblue");
 
     fill("lightgray");
@@ -11,7 +10,4 @@ function setup() {
 
     fill("pink")
     triangle(325, 325, 350, 340, 375, 325)
-
-
-
 }
