@@ -17,7 +17,7 @@ function setup() {
     fill("green");
     circle(640, 200, 180);
     circle(575, 250, 175);
-    circle(700, 250, 175)
+    circle(700, 250, 175);
 
 
 
