@@ -5,10 +5,18 @@ function setup() {
 
 
 let x = 0;
+let direction = 1000;
 
 function draw() {
     background("skyblue");
-    fill ("yellow");
-    circle(x, 100, 50);
-    x += 2;
+    fill("yellow");
+    circle(width / 2, height / 2, x);
+    x += direction;
+    if (x >= width) {
+        direction = -1000
+    }
+
+    if (x <= 0) {
+        direction = 1000
+    }
 }
