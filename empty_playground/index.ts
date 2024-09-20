@@ -1,7 +1,14 @@
 function setup() {
     createCanvas(500, 500);
-    background("skyblue");
 }
 
+
+
+let x = 0;
+
 function draw() {
+    background("skyblue");
+    fill ("yellow");
+    circle(x, 100, 50);
+    x++;
 }
