@@ -10,5 +10,5 @@ function draw() {
     background("skyblue");
     fill ("yellow");
     circle(x, 100, 50);
-    x++;
+    x += 2;
 }
