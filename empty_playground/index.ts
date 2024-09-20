@@ -5,10 +5,10 @@ function setup() {
 
 function mouseClicked() {
     noStroke();
-    fill("red");
+    fill("skyblue");
     circle(mouseX, mouseY, 10);
 
-    fill("red");
+    fill("skyblue");
     noStroke();
     rect(0, height - 20, width / 2, height);
 
