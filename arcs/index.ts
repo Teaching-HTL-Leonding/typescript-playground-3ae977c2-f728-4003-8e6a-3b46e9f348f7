@@ -16,4 +16,9 @@ function setup() {
   circle(275, 125, 20);
 
   noFill();
+
+  
+   
+
+  arc(200, 250, 200, 150, 25, 180);
 }
