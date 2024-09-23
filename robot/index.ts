@@ -16,4 +16,7 @@ function setup() {
     fill("white");
     circle(350, 150, 50)
 
+    fill("white");
+    rect(260, 500, 170, 30)
+
 }
