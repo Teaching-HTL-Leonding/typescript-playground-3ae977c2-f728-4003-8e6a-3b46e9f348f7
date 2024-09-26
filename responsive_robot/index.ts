@@ -12,9 +12,9 @@ function setup() {
   const mouthX = width / 2 - headWidth * 0.25
   const mouthY = height / 2 + headHeight * 0.25
   const eyeY1 = height / 2 - headWidth * 0.25
-  const eyeX1 = width / 2 - headHeight * 0.25
-  const eyeY2 = height / 2 - headWidth * 0.75
-  const eyeX2 = width / 2 - headHeight * 0.75
+  const eyeX1 = width / 2 + headHeight * 0.25
+  const eyeY2 = height / 2 - headWidth * 0.25
+  const eyeX2 = width / 2 + headHeight * 0.25
 
   
 
