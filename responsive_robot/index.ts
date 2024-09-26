@@ -11,6 +11,7 @@ function setup() {
   const mouthHeight = headHeight * 0.1
   const mouthX = width / 2 - headWidth * 0.25
   const mouthY = height / 2 + headHeight * 0.25
+  const eye
 
   // Draw the robot's head
   fill("gray");
