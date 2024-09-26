@@ -15,6 +15,7 @@ function setup() {
   const eyeX1 = width / 2 + headHeight * 0.25
   const eyeY2 = height / 2 - headWidth * 0.25
   const eyeX2 = width / 2 + headHeight * 0.25
+  const 
 
   
 
