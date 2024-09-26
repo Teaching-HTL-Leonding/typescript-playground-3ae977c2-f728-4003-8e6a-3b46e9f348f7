@@ -11,12 +11,19 @@ function setup() {
   const mouthHeight = headHeight * 0.1
   const mouthX = width / 2 - headWidth * 0.25
   const mouthY = height / 2 + headHeight * 0.25
-  const eye
+  const eyeY1 = height / 2 - headWidth * 0.25
+  const eyeX1 = width / 2 - headHeight * 0.25
+  const eyeY2 = height / 2 - headWidth * 0.75
+  const eyeX2 = width / 2 - headHeight * 0.75
 
-  // Draw the robot's head
+  
+
   fill("gray");
   rect(headX, headY, headWidth, headHeight);
-  fill("white")
-  rect(mouthX, mouthY, mouthWidth, mouthHeight)
-  // Add your code here
+  fill("white");
+  rect(mouthX, mouthY, mouthWidth, mouthHeight);
+  fill("black");
+  circle(eyeX1, eyeY1, 35)
+  circle(eyeX2, eyeY2, 35)
+  
 }
