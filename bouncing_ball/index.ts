@@ -1,13 +1,17 @@
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(600, 400);
 }
 
 const circleDiameter = 50;
+const circle2 = 50;
 
-let circleCenterX = 0;
+let circleCenterX = 2;
 let direction = 2;
 
-// Remember: The _draw_ method is called FOR EVERY FRAME
+let circleCenterY = width /2;
+let direction2 = 2
+
+
 function draw() {
   background("gold");
 
@@ -18,11 +22,16 @@ function draw() {
 
   circleCenterX += direction;
 
-  //                         +----------------------------- OR operator
-  //                         |
-  //                         v
+  
   if (circleCenterX >= width || circleCenterX <= 0) {
     // Reverse sign of direction (positive -> right, negative -> left)
     direction *= -1; 
   }
+  fill("blue")
+  circle(width /2, 0, circle2)
+
+  circleCenterY += direction2;
+
+
+
 }
