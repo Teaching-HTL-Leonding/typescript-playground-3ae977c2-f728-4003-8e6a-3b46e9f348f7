@@ -16,6 +16,7 @@ function setup() {
 }
 
 function mouseClicked() {
+
 let message: string
 
 if(mouseX < width / 3) {
@@ -24,9 +25,7 @@ if(mouseX < width / 3) {
 message = "Green"
 } else {
     message = "Red"
-
-}
-
-
-
+ }
+ fill("white")
+ 
 }
