@@ -8,7 +8,7 @@ let circleCenterX = 0;
 let directionX = 1;
 
 
-let circleCenterY= 0;
+let circleCenterY = 0;
 let directionY = 2;
 
 function draw() {
@@ -17,14 +17,16 @@ function draw() {
   stroke("white");
   strokeWeight(3);
   fill("lime");
-  circle(circleCenterX,circleCenterY , circleDiameter);
+  circle(circleCenterX, circleCenterY, circleDiameter);
 
   circleCenterX += directionX
   circleCenterY += directionY
 
-  if (circleCenterX >= width || circleCenterX <= 0) 
+  if (circleCenterX >= width || circleCenterX <= 0) {
     directionX *= -1
+  }
 
-      if (circleCenterY >= height || circleCenterY <= 0) 
+  if (circleCenterY >= height || circleCenterY <= 0) {
     directionY *= -1
   }
+}
