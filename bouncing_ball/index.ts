@@ -3,14 +3,13 @@ function setup() {
 }
 
 const circleDiameter = 50;
-const circle2 = 50;
 
-let circleCenterX = 2;
-let direction = 2;
+let circleCenterX = 0;
+let directionX = 2;
 
-let circleCenterY = width /2;
-let direction2 = 2
 
+let circleCenterY= 0;
+let directionY = 2;
 
 function draw() {
   background("gold");
@@ -20,18 +19,22 @@ function draw() {
   fill("lime");
   circle(circleCenterX, height / 2, circleDiameter);
 
-  circleCenterX += direction;
+  circleCenterX += directionX;
 
-  
   if (circleCenterX >= width || circleCenterX <= 0) {
-    // Reverse sign of direction (positive -> right, negative -> left)
-    direction *= -1; 
+    directionX *= -1; 
   }
-  fill("blue")
-  circle(width /2, 0, circle2)
-
-  circleCenterY += direction2;
 
 
+stroke("white");
+  strokeWeight(3);
+  fill("blue");
+  circle(width/2, circleCenterY, circleDiameter);
+
+  circleCenterY += directionY;
+
+  if (circleCenterY >= height || circleCenterY <= 0) {
+    directionY *= -1; 
+  }
 
 }
