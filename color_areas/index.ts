@@ -3,26 +3,35 @@ function setup() {
     background("black");
     noStroke();
 
-    fill("yellow")
-    rect(0, 0, width / 3, height * 0.75)
+    fill("yellow");
+    rect(0, 0, width/3, height );
 
-    fill("green")
-    rect(width / 3, 0, width * 2 / 3, height * 0.75)
+    fill("red");
+    rect(width / 3, 0, width / 3, height);
 
-    fill("red")
-    rect(width * 2 / 3, 0, width, height * 0.75)
+    fill("green");
+    rect(width / 3 * 2, 0, width / 3, height);
+
+    
 }
 
 function mouseClicked() {
-    let message: string
+    fill("black");
+    rect(0, height -height /3, width, height /3);
+
+
+    fill("white");
+    let message: string;
 
     if (mouseX < width / 3) {
         message = "Yellow"
     } else if (mouseX < width / 3 * 2) {
-        message = "Green"
+        message = "Red";
+        
     } else {
-        message = "Red"
+        message = "Green";
     }
-    fill("white")
-
+    textAlign(CENTER);
+    textSize(40);
+    text(message, width /2, height -20);
 }
