@@ -7,7 +7,7 @@ function setup() {
 
   // Generate an integer random number 
   // between 1 (including) and 7 (excluding)
-  const dice = Math.floor(random(1, 7));
+  const dice = Math.floor(random(6, 7));
 
   noStroke();
   fill("white");
@@ -20,15 +20,31 @@ function setup() {
     circle(3 * width / 4, 3 * height / 4, dicePointDiameter);
   } else if (dice === 3) {
 
-    circle(width / 2, height / 2, dicePointDiameter)
+    circle(width / 2, height / 2, dicePointDiameter);
     circle(width / 4, height / 4, dicePointDiameter);
     circle(3 * width / 4, 3 * height / 4, dicePointDiameter);
   } else if (dice === 4) {
     circle(width / 4, height / 4, dicePointDiameter);
+    circle(width / 4, 3 * height / 4, dicePointDiameter);
     circle(3 * width / 4, height / 4, dicePointDiameter);
-    circle(width / 4, height / 4, dicePointDiameter);
     circle(3 * width / 4, 3 * height / 4, dicePointDiameter);
-  }
+  } else if (dice === 5) {
+    circle(width / 4, height / 4, dicePointDiameter);
+    circle(width / 4, 3 * height / 4, dicePointDiameter);
+    circle(3 * width / 4, height / 4, dicePointDiameter);
+    circle(3 * width / 4, 3 * height / 4, dicePointDiameter);
+    circle(width / 2, height / 2, dicePointDiameter);
+  } else if (dice === 6) {
 
+    circle(width / 3, height / 4, dicePointDiameter);
+    circle(width / 3, height / 2, dicePointDiameter);
+    circle(width / 3, height / 1.3, dicePointDiameter);
+
+
+    circle(width / 1.5, height / 4, dicePointDiameter);
+    circle(width / 1.5, height / 2, dicePointDiameter);
+    circle(width / 1.5, height / 1.3, dicePointDiameter);
+
+  }
 
 }
