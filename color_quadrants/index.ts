@@ -26,6 +26,9 @@ function setup() {
 
 function mouseClicked() {
 
+    fill("black")
+    rect(width / 4, height / 3, width * 0.5, height / 3)
+
     fill("white")
     let message: string
 
@@ -40,6 +43,6 @@ function mouseClicked() {
     }
     textAlign(CENTER);
     textSize(40);
-    text(message, width / 4, height /3 );
+    text(message, width / 2, height / 2);
 
 }
