@@ -5,7 +5,7 @@ function setup() {
 const circleDiameter = 50;
 
 let circleCenterX = 0;
-let directionX = 2;
+let directionX = 1;
 
 
 let circleCenterY= 0;
