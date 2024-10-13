@@ -7,9 +7,13 @@ function setup() {
   fill("yellow");
   strokeWeight(2);
   textAlign(CENTER, CENTER);
-  textSize(20);
-  text(`${Math.floor(num / 100000) % 10}`, width / 14, height /3, width / 9, height /3)
-
+  textSize(30);
+  text(`${Math.floor(num / 100000) % 10}`, width / 14, height / 3, width / 9, height / 3);
+  text(`${Math.floor(num / 10000) % 10}`, width / 5, height / 3, width / 9, height / 3);
+  text(`${Math.floor(num / 1000) % 10}`, width / 3, height / 3, width / 9, height / 3);
+  text(`${Math.floor(num / 100) % 10}`, width / 2.15, height / 3, width / 9, height / 3);
+  text(`${Math.floor(num / 10) % 10} `, width / 1.68, height / 3, width / 9, height / 3);
+  text(`${Math.floor(num) % 10}`, width / 1.38, height / 3, width / 9, height / 3);
 
   textAlign(CENTER, CENTER);
   fill("yellow");
