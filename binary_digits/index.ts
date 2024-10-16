@@ -22,12 +22,12 @@ function setup() {
   strokeWeight(2);
   textAlign(CENTER, CENTER);
   textSize(30);
-  text(`${lastDigit1}`, width / 14, height / 3, width / 9, height / 3);
-  text(`${lastDigit1}`, width / 5, height / 3, width / 9, height / 3);
-  text(`${lastDigit3}`, width / 3, height / 3, width / 9, height / 3);
-  text(`${lastDigit4}`, width / 2.15, height / 3, width / 9, height / 3);
-  text(`${lastDigit5} `, width / 1.68, height / 3, width / 9, height / 3);
-  text(`${lastDigit6}`, width / 1.38, height / 3, width / 9, height / 3);
+  text(`${lastDigit6}`, width / 14, height / 3, width / 9, height / 3);
+  text(`${lastDigit5}`, width / 5, height / 3, width / 9, height / 3);
+  text(`${lastDigit4}`, width / 3, height / 3, width / 9, height / 3);
+  text(`${lastDigit3}`, width / 2.15, height / 3, width / 9, height / 3);
+  text(`${lastDigit2} `, width / 1.68, height / 3, width / 9, height / 3);
+  text(`${lastDigit1}`, width / 1.38, height / 3, width / 9, height / 3);
 
   textAlign(CENTER, CENTER);
   fill("yellow");
