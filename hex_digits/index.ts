@@ -1,5 +1,4 @@
 function setup() {
-  function setup() {
 
   const num = Math.floor(random(0, 64));
   const lastDigit1 = num % 2
@@ -44,7 +43,5 @@ function setup() {
   rect(width / 2.15, height / 3, width / 9, height / 3);
   rect(width / 1.68, height / 3, width / 9, height / 3);
   rect(width / 1.38, height / 3, width / 9, height / 3);
-  
-}
   
 }
