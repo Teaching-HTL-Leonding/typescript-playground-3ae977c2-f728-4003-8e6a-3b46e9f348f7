@@ -21,26 +21,25 @@ function setup() {
   textAlign(CENTER, CENTER);
   textSize(30);
 
-  text(`${lastDigit1}`, width / 6, height / 3, width / 7, height / 3);
-  text(`${lastDigit2} `, width / 6 * 2.5, height / 3, width / 7, height / 3);
-  text(`${lastDigit3}`, width / 6 * 4, height / 3, width / 7, height / 3);
 
-
-  if (lastDigit1 === 10) {
+  if (lastDigit3 === 10) {
     text("A", width / 6, height / 3, width / 7, height / 3)
-  } else if (lastDigit1 === 11) {
+  } else if (lastDigit3 === 11) {
     text("B", width / 6, height / 3, width / 7, height / 3)
-  } else if (lastDigit1 === 12) {
+  } else if (lastDigit3 === 12) {
     text("C", width / 6, height / 3, width / 7, height / 3)
-  } else if (lastDigit1 === 13) {
+  } else if (lastDigit3 === 13) {
     text("D", width / 6, height / 3, width / 7, height / 3)
   } else if (lastDigit1 === 14) {
     text("E", width / 6, height / 3, width / 7, height / 3)
-  } else if (lastDigit1 === 15) {
+  } else if (lastDigit3 === 15) {
     text("F", width / 6, height / 3, width / 7, height / 3)
+  } else {
+    text(`${lastDigit3}`, width / 6, height / 3, width / 7, height / 3);
+
   }
 
- if (lastDigit2 === 10) {
+  if (lastDigit2 === 10) {
     text("A", width / 6 * 2.5, height / 3, width / 7, height / 3)
   } else if (lastDigit2 === 11) {
     text("B", width / 6 * 2.5, height / 3, width / 7, height / 3)
@@ -52,20 +51,26 @@ function setup() {
     text("E", width / 6 * 2.5, height / 3, width / 7, height / 3)
   } else if (lastDigit2 === 15) {
     text("F", width / 6 * 2.5, height / 3, width / 7, height / 3)
+  } else {
+    text(`${lastDigit2} `, width / 6 * 2.5, height / 3, width / 7, height / 3);
+
   }
 
-  if (lastDigit3 === 10) {
+  if (lastDigit1 === 10) {
     text("A", width / 6 * 4, height / 3, width / 7, height / 3)
-  } else if (lastDigit3 === 11) {
+  } else if (lastDigit1 === 11) {
     text("B", width / 6 * 4, height / 3, width / 7, height / 3)
-  } else if (lastDigit3 === 12) {
+  } else if (lastDigit1 === 12) {
     text("C", width / 6 * 4, height / 3, width / 7, height / 3)
-  } else if (lastDigit3 === 13) {
+  } else if (lastDigit1 === 13) {
     text("D", width / 6 * 4, height / 3, width / 7, height / 3)
-  } else if (lastDigit3 === 14) {
+  } else if (lastDigit1 === 14) {
     text("E", width / 6 * 4, height / 3, width / 7, height / 3)
-  } else if (lastDigit3 === 15) {
+  } else if (lastDigit1 === 15) {
     text("F", width / 6 * 4, height / 3, width / 7, height / 3)
+  } else {
+    text(`${lastDigit1}`, width / 6 * 4, height / 3, width / 7, height / 3);
+
   }
 
   stroke("yellow");
