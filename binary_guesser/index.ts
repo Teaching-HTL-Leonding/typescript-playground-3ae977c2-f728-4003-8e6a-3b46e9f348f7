@@ -12,7 +12,7 @@ function setup() {
   textSize(40);
   text(num, width / 2, height / 5);
   text(0, width / 7, height / 2, width / 6, height / 2);
-  text(0,  width / 7 * 2.5, height / 2, width / 6, height / 2);
+  text(0, width / 7 * 2.5, height / 2, width / 6, height / 2);
   text(0, width / 7 * 4, height / 2, width / 6, height / 2);
   text(0, width / 7 * 5.5, height / 2, width / 6, height / 2)
 
@@ -29,6 +29,8 @@ function setup() {
 }
 
 function mouseClicked() {
-if(mouseX < width / 7 && mouseY < height / 2)
+  if (mouseX > width / 8 && mouseX < width / 8 + width / 7 && mouseY > height / 3 && mouseY < height / 3 + height / 3) {
+    text("1", width / 7, height / 2, width / 6, height / 2)
+  }
 }
- 
+
