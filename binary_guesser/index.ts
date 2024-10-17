@@ -31,6 +31,14 @@ function setup() {
 function mouseClicked() {
   if (mouseX > width / 8 && mouseX < width / 8 + width / 7 && mouseY > height / 3 && mouseY < height / 3 + height / 3) {
     text("1", width / 7, height / 2, width / 6, height / 2)
+  } else if (mouseX > width / 8 * 2.5 && mouseX < width / 8 * 2.5 + width / 7 && mouseY > height / 3 && mouseY < height / 3 + height / 3) {
+    text("1", width / 7 * 2.5, height / 2, width / 6, height / 2)
+  } else if (mouseX > width / 8 * 4 && mouseX < width / 8 * 2.5+ width / 7 && mouseY > height / 3 && mouseY < height / 3 + height / 3) {
+    text("1", width / 7 * 4, height / 2, width / 6, height / 2)
   }
+
+
+
+
 }
 
