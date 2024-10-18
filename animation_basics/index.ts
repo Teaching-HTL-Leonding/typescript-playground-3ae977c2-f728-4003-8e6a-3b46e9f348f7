@@ -72,7 +72,5 @@ function draw() {
     // Move the sprite to the right. If the sprite moved too far, set it back to the left.
     x += 5;
     // <<< Add the logic to reset the sprite position to the left when it has moved too far to the right (> 500 pixels is a good threshold).
-    if (imageIndex > width) {
-        x*=-1
-    }
+      if (x > width)(x= -500)
 }
