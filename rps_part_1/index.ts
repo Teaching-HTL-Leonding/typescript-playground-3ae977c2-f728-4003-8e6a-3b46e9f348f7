@@ -22,6 +22,35 @@ function setup() {
     text("✂️", SCISSORS_LEFT, symbol);
 }
 
+
 function mouseMoved() {
 
+    noFill();
+    strokeWeight(3);
+
+    const positionOfMouse = mouseY >= ICON_TOP && mouseY < ICON_TOP + ICON_HEIGHT;
+
+    if (positionOfMouse && mouseX >= STONE_LEFT && mouseX < STONE_LEFT + ICON_WIDTH) {
+        stroke("yellow");
+    } else {
+        stroke("black");
+    }
+
+    rect(STONE_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
+
+    if (positionOfMouse && mouseX >= PAPER_LEFT && mouseX < PAPER_LEFT + ICON_WIDTH) {
+        stroke("yellow");
+    } else {
+        stroke("black");
+    }
+    rect(PAPER_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
+
+    if (positionOfMouse && mouseX >= SCISSORS_LEFT && mouseX < SCISSORS_LEFT + ICON_WIDTH) {
+        stroke("yellow");
+    } else {
+        stroke("black");
+    }
+    rect(SCISSORS_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
 }
+
+
