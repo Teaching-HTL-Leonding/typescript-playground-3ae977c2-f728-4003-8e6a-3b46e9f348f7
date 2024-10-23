@@ -1,7 +1,3 @@
-// We declare constants to avoid repeating "magic numbers". 
-// These numbers are used for positioning text and icons on the canvas.
-// Note that we use all-caps for constants that represent 
-// configuration values to make them easy to recognize.
 const TEXT_LEFT = 30;
 const STONE_LEFT = 50;
 const PAPER_LEFT = 175;
@@ -26,6 +22,8 @@ function setup() {
     text("✂️", SCISSORS_LEFT, symbol);
 }
 
-function mouseMoved() {
-    // <<< Add your code here
+function mouseClicked() {
+    stroke("yellow")
+    noFill()
+    rect(mouseX, mouseY, 150)
 }
