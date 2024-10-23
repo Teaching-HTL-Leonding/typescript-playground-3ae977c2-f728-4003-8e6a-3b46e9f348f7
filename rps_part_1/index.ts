@@ -7,7 +7,7 @@ const ICON_TOP = 75;
 const ICON_HEIGHT = 100;
 
 function setup() {
-     createCanvas(500, 490);
+    createCanvas(500, 490);
     background("black");
 
     fill("yellow");
@@ -22,8 +22,6 @@ function setup() {
     text("✂️", SCISSORS_LEFT, symbol);
 }
 
-function mouseClicked() {
-    stroke("yellow")
-    noFill()
-    rect(mouseX, mouseY, 150)
+function mouseMoved() {
+
 }
