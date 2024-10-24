@@ -34,5 +34,19 @@ function setup() {
             circle(3 * width / 4, height / 4, dicePointDiameter);
             circle(3 * width / 4, 3 * height / 4, dicePointDiameter);
             break;
+        case 5:
+            circle(width / 4, height / 4, dicePointDiameter)
+            circle(width / 4, 3 * height / 4, dicePointDiameter);
+            circle(3 * width / 4, height / 4, dicePointDiameter);
+            circle(3 * width / 4, 3 * height / 4, dicePointDiameter);
+            circle(width / 2, height / 2, dicePointDiameter);
+            break;
+        case 6:
+            circle(width / 4, height / 4, dicePointDiameter)
+            circle(width / 4, 3 * height / 4, dicePointDiameter);
+            circle(3 * width / 4, height / 4, dicePointDiameter);
+            circle(3 * width / 4, 3 * height / 4, dicePointDiameter);
+            circle(width / 4, height / 2, dicePointDiameter)
+            circle(width / 4 * 3, height / 2, dicePointDiameter)
     }
 }
