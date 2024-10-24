@@ -19,11 +19,9 @@ function draw() {
 
     stroke("black");
     fill("black");
-    strokeWeight(2);
     textSize(55);
     textAlign(CENTER, CENTER)
 
-    line(0, lineHeight, width, lineHeight);
     text('9', width / 3 * 2 + cellWidth / 2, lineHeight + lineHeight / 2);
     text('8', width / 3 + cellWidth / 2, lineHeight + lineHeight / 2);
     text('7', cellWidth / 2, lineHeight + lineHeight / 2);
@@ -36,8 +34,11 @@ function draw() {
     text('0', cellWidth , lineHeight * 4.5)
     text('C', width / 3 * 2 + cellWidth / 2, lineHeight * 4.5)
 
-
-
+    strokeWeight(2);
+    line(0, lineHeight, width, lineHeight);
+    line(0, lineHeight * 2, width, lineHeight * 2)
+    line(0, lineHeight * 3, width, lineHeight * 3)
+    line(0, lineHeight * 4, width, lineHeight * 4)
 
 }
 
