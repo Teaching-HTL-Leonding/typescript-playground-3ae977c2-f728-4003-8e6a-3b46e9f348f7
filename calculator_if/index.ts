@@ -5,7 +5,7 @@ let lineHeight: number = 0;   // Height of a line of the responsive layout
 let cellWidth: number = 0;    // Width of a cell of the responsive layout
 
 function setup() {
-    createCanvas(300, 500);
+    createCanvas(400, 600);
     lineHeight = height / 5;
     cellWidth = width / 3;
 }
@@ -29,9 +29,9 @@ function draw() {
     text('5', width / 3 + cellWidth / 2, lineHeight * 2.5)
     text('4', cellWidth / 2, lineHeight * 2.5)
     text('3', width / 3 * 2 + cellWidth / 2, lineHeight * 3.5)
-    text('2', width / 3  + cellWidth / 2, lineHeight * 3.5)
-    text('1', cellWidth / 2, lineHeight * 3.5 )
-    text('0', cellWidth , lineHeight * 4.5)
+    text('2', width / 3 + cellWidth / 2, lineHeight * 3.5)
+    text('1', cellWidth / 2, lineHeight * 3.5)
+    text('0', cellWidth, lineHeight * 4.5)
     text('C', width / 3 * 2 + cellWidth / 2, lineHeight * 4.5)
 
     strokeWeight(2);
@@ -39,7 +39,8 @@ function draw() {
     line(0, lineHeight * 2, width, lineHeight * 2)
     line(0, lineHeight * 3, width, lineHeight * 3)
     line(0, lineHeight * 4, width, lineHeight * 4)
-    
+    line(width / 3, height / 5, width / 3, height / 5 * 4)
+    line(width / 3 * 2, height / 5, width / 3 * 2, lineHeight * 5)
 
 }
 
