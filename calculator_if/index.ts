@@ -39,6 +39,7 @@ function draw() {
     line(0, lineHeight * 2, width, lineHeight * 2)
     line(0, lineHeight * 3, width, lineHeight * 3)
     line(0, lineHeight * 4, width, lineHeight * 4)
+    
 
 }
 
