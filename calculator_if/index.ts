@@ -45,5 +45,5 @@ function draw() {
 }
 
 function mouseClicked() {
-    // <<< Add code here
+
 }
