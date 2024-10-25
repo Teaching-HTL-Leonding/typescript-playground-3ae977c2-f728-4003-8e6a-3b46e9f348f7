@@ -19,14 +19,6 @@ function draw() {
 
     stroke("black");
     fill("black");
-    strokeWeight(2);
-    textSize(50);
-
-    textAlign(RIGHT, CENTER);
-    text(num, width - MARGIN_NUM * 2, lineHeight / 2);
-
-    stroke("black");
-    fill("black");
     textSize(55);
     textAlign(CENTER, CENTER)
 
@@ -50,8 +42,15 @@ function draw() {
     line(width / 3, height / 5, width / 3, height / 5 * 4)
     line(width / 3 * 2, height / 5, width / 3 * 2, lineHeight * 5)
 
+    stroke("black")
+    text(num, width - MARGIN_NUM * 3, lineHeight / 2);
+
+
 }
 
 function mouseClicked() {
-
+    if (mouseX <= cellWidth / 2 || mouseY <= lineHeight + lineHeight / 2) {
+        stroke("black")
+        text("Es funktioniert", width - MARGIN_NUM * 3, lineHeight / 2)
+    }
 }
