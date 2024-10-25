@@ -19,6 +19,14 @@ function draw() {
 
     stroke("black");
     fill("black");
+    strokeWeight(2);
+    textSize(50);
+
+    textAlign(RIGHT, CENTER);
+    text(num, width - MARGIN_NUM * 2, lineHeight / 2);
+
+    stroke("black");
+    fill("black");
     textSize(55);
     textAlign(CENTER, CENTER)
 
