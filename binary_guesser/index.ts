@@ -1,44 +1,102 @@
+let guessedDigit1 = 0;
+let guessedDigit2 = 0;
+let guessedDigit3 = 0;
+let guessedDigit4 = 0;
 let num = 0;
-const digit1 = 0
-
 
 function setup() {
-  num = Math.floor(random(0, 16));
+  num = Math.floor(random(1, 16));
 
-  createCanvas(600, 400);
+  createCanvas(400, 300);
   background("black");
 
-  fill("yellow")
-  textSize(40);
-  text(num, width / 2, height / 5);
-  text(0, width / 7, height / 2, width / 6, height / 2);
-  text(0, width / 7 * 2.5, height / 2, width / 6, height / 2);
-  text(0, width / 7 * 4, height / 2, width / 6, height / 2);
-  text(0, width / 7 * 5.5, height / 2, width / 6, height / 2)
+  
+  noFill();
+  stroke("yellow");
+  rect(50 + 0 * 75, 100, 50, 75);
+  rect(50 + 1 * 75, 100, 50, 75);
+  rect(50 + 2 * 75, 100, 50, 75);
+  rect(50 + 3 * 75, 100, 50, 75);
 
-  stroke("yellow")
-  strokeWeight(2)
-  noFill()
-  rect(width / 8, height / 3, width / 7, height / 3);
-  rect(width / 8 * 2.5, height / 3, width / 7, height / 3);
-  rect(width / 8 * 4, height / 3, width / 7, height / 3);
-  rect(width / 8 * 5.5, height / 3, width / 7, height / 3)
+  
+  textAlign(CENTER, CENTER);
+  fill("yellow");
+  noStroke();
+  textSize(30);
+  text(`${num} in binary?`, width / 2, height / 6);
 
-
-
+  text(0, 75 + 0 * 75, 100 + 75 / 2);
+  text(0, 75 + 1 * 75, 100 + 75 / 2);
+  text(0, 75 + 2 * 75, 100 + 75 / 2);
+  text(0, 75 + 3 * 75, 100 + 75 / 2);
 }
 
 function mouseClicked() {
-  if (mouseX > width / 8 && mouseX < width / 8 + width / 7 && mouseY > height / 3 && mouseY < height / 3 + height / 3) {
-    text("1", width / 7, height / 2, width / 6, height / 2)
-  } else if (mouseX > width / 8 * 2.5 && mouseX < width / 8 * 2.5 + width / 7 && mouseY > height / 3 && mouseY < height / 3 + height / 3) {
-    text("1", width / 7 * 2.5, height / 2, width / 6, height / 2)
-  } else if (mouseX > width / 8 * 4 && mouseX < width / 8 * 2.5+ width / 7 && mouseY > height / 3 && mouseY < height / 3 + height / 3) {
-    text("1", width / 7 * 4, height / 2, width / 6, height / 2)
-  }
+  if (mouseY >= 100 && mouseY <= 175) {
 
+    if (mouseX >= 50 + 0 * 75 && mouseX <= 50 + 0 * 75 + 50) {
+      if (guessedDigit4 === 1) {
+        guessedDigit4 = 0;
+      } else {
+        guessedDigit4 = 1;
+      }
+    }
 
+    if (mouseX >= 50 + 1 * 75 && mouseX <= 50 + 1 * 75 + 50) {
+      if (guessedDigit3 === 1) {
+        guessedDigit3 = 0;
+      } else {
+        guessedDigit3 = 1;
+      }
+    }
 
+    if (mouseX >= 50 + 2 * 75 && mouseX <= 50 + 2 * 75 + 50) {
+      if (guessedDigit2 === 1) {
+        guessedDigit2 = 0;
+      } else {
+        guessedDigit2 = 1;
+      }
+    }
 
+    if (mouseX >= 50 + 3 * 75 && mouseX <= 50 + 3 * 75 + 50) {
+      if (guessedDigit1 === 1) {
+        guessedDigit1 = 0;
+      } else {
+        guessedDigit1 = 1;
+      }
+    }
+
+    // Build new guessed number
+    let guessedNumber = guessedDigit4 * Math.pow(2, 3);
+    guessedNumber += guessedDigit3 * Math.pow(2, 2);
+    guessedNumber += guessedDigit2 * Math.pow(2, 1);
+    guessedNumber += guessedDigit1 * Math.pow(2, 0);
+
+    
+    let color = "yellow";
+    if (guessedNumber === num) {
+      
+      color = "lime";
+    }
+    fill("black");
+    stroke(color);
+
+    rect(50 + 0 * 75, 100, 50, 75);
+    rect(50 + 1 * 75, 100, 50, 75);
+    rect(50 + 2 * 75, 100, 50, 75);
+    rect(50 + 3 * 75, 100, 50, 75);
+
+    textAlign(CENTER, CENTER);
+    fill(color);
+    noStroke();
+    textSize(30);
+    text(guessedDigit4, 75 + 0 * 75, 100 + 75 / 2);
+    text(guessedDigit3, 75 + 1 * 75, 100 + 75 / 2);
+    text(guessedDigit2, 75 + 2 * 75, 100 + 75 / 2);
+    text(guessedDigit1, 75 + 3 * 75, 100 + 75 / 2);
+
+    if (guessedNumber === num) {
+      text("Correct!", width / 2, 220);
+    } 
+   }
 }
-
