@@ -38,7 +38,7 @@ function setup() {
 function mouseClicked() {
   if (mouseY >= height / 4 && mouseY <= height / 3) {
 
-    if (mouseX >= 600 / 9 && mouseX <= 600 / 6) {
+    if (mouseX >= 100 && mouseX <= 100 + 600 / 9) {
       if (guessedDigit4 === 1) {
         guessedDigit4 = 0
       } else {
@@ -46,7 +46,7 @@ function mouseClicked() {
       }
     }
 
-    if (mouseX >= 600 / 9 && mouseX <= 600 / 6 * 2) {
+    if (mouseX >= 200 && mouseX <= 200 + 600 / 9) {
       if (guessedDigit3 === 1) {
         guessedDigit3 = 0
       } else {
@@ -54,7 +54,7 @@ function mouseClicked() {
       }
     }
 
-    if (mouseX >= 600 / 9 && mouseX <= 600 / 6 * 3) {
+    if (mouseX >= 300 && mouseX <= 300 + 600 / 9) {
       if (guessedDigit2 === 1) {
         guessedDigit2 = 0
       } else {
@@ -62,7 +62,7 @@ function mouseClicked() {
       }
     }
 
-    if (mouseX >= 600 / 9 && mouseX <= 600 / 6 * 4) {
+    if (mouseX >= 400 && mouseX <= 400 + 600 / 9) {
       if (guessedDigit1 === 1) {
         guessedDigit1 = 0
       } else {
