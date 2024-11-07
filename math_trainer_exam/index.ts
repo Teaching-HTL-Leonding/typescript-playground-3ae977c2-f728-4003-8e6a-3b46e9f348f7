@@ -22,36 +22,31 @@ function setup() {
 
     textAlign(CENTER, RIGHT);
     textSize(55);
-    text(`${num3}`, width - 35, height / 2);
-
-
-
-    text(`${num4}`, width / 4, height / 5);
-    text(`${num5}`, width / 4 * 3, height / 5);
+    text(`${num5}`, width - 35, height / 2);
 
     text(`${num3}`, width / 4, height / 5);
     text(`${num4}`, width / 4 * 3, height / 5);
 
+    text(`${num3}`, width / 4, height / 5);
+    text(`${num4}`, width / 4 * 3, height / 5);
+
+    if (operator === 3) {
+        correctAnswer = num4 + num3
+    }
+
+    if (operator === 2) {
+        correctAnswer = num4 - num3
+    }
+
     if (operator === 1) {
+        correctAnswer = num4 * num3
+    }
+  if (operator === 1) {
         text('+', width / 4 * 2, height / 5);
     } else if (operator === 2) {
         text('-', width / 4 * 2, height / 5);
     } else {
         text('*', width / 4 * 2, height / 5);
-    }
-
-
-
-    if (operator === 1) {
-        correctAnswer = num4 - num3
-    }
-
-    if (operator === 2) {
-        correctAnswer = num4 * num3
-    }
-
-    if (operator === 3) {
-        correctAnswer = num4 + num3
     }
 
 }
