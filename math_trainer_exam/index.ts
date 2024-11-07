@@ -9,7 +9,7 @@ function setup() {
     let num4 = Math.floor(random(0, 100));
     let num5 = Math.floor(random(0, 100));
     let operator = Math.floor(random(1, 4));
-    let correctAnswer = 1
+    let correctAnswer = 0
     let placeofnum = Math.floor(random(1, 4));
 
 
@@ -19,16 +19,14 @@ function setup() {
     textSize(55);
     text(`${num1}`, width / 6, height / 2);
     text(`${num2}`, width / 2, height / 2);
+    text(`${num3}`, width - 35, height / 2);
 
     textAlign(CENTER, RIGHT);
     textSize(55);
-    text(`${num5}`, width - 35, height / 2);
 
     text(`${num3}`, width / 4, height / 5);
     text(`${num4}`, width / 4 * 3, height / 5);
 
-    text(`${num3}`, width / 4, height / 5);
-    text(`${num4}`, width / 4 * 3, height / 5);
 
     if (operator === 3) {
         correctAnswer = num4 + num3
@@ -41,7 +39,8 @@ function setup() {
     if (operator === 1) {
         correctAnswer = num4 * num3
     }
-  if (operator === 1) {
+
+    if (operator === 1) {
         text('+', width / 4 * 2, height / 5);
     } else if (operator === 2) {
         text('-', width / 4 * 2, height / 5);
