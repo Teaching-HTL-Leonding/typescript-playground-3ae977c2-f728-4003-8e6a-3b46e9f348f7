@@ -24,7 +24,7 @@ function setup() {
     textSize(55);
     text(`${num3}`, width - 35, height / 2);
 
-    background("black")
+
 
     text(`${num4}`, width / 4, height / 5);
     text(`${num5}`, width / 4 * 3, height / 5);
