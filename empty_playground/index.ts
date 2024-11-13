@@ -1,4 +1,3 @@
-
 function setup() {
     createCanvas(400, 400);
     background("black");
@@ -10,10 +9,6 @@ function setup() {
     let num5 = Math.floor(random(0, 100));
     let operator = Math.floor(random(1, 4));
     let correctAnswer = 0
-    let placeofnum = Math.floor(random(1, 4));
-
-    let message: string
-
 
     fill("yellow");
 
@@ -37,18 +32,38 @@ function setup() {
         text('*', width / 2, height / 6)
     }
 
-    if (operator ===1) { 
-        if (correctAnswer === 1)
-        firstrandumnum = (`${num4 + num5}`)
-        
+    if (operator === 1) {
+        if (correctAnswer === 1) {
+            firstrandumnum = num4 + num5
+        } if (correctAnswer === 2) {
+            secondrandomnum = num4 + num5
+        } else {
+            thirdrandomnum = num4 + num5
+        }
     }
 
+
+    if (operator === 2) {
+        if (correctAnswer === 1) {
+            firstrandumnum = num4 - num5
+        } if (correctAnswer === 2) {
+            secondrandomnum = num4 - num5
+        } else {
+            thirdrandomnum = num4 - num5
+        }
+    }
+
+    if (operator === 3) {
+        if (correctAnswer === 1) {
+            firstrandumnum = num4 * num5
+        } if (correctAnswer === 2) {
+            secondrandomnum = num4 * num5
+        } else {
+            thirdrandomnum = num4 * num5
+        }
+    }
 }
 
-
-
-
-// mouseClicked function checks if the user clicked on the correct answer
 function mouseClicked() {
 
 }
