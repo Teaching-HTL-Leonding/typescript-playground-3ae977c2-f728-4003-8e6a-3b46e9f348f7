@@ -12,12 +12,6 @@ function setup() {
 
     fill("yellow");
 
-    textAlign(CENTER, LEFT);
-    textSize(55);
-    text(`${firstrandumnum}`, width / 6, height / 2);
-    text(`${secondrandomnum}`, width / 2, height / 2);
-    text(`${thirdrandomnum}`, width - 35, height / 2);
-
     textAlign(CENTER, RIGHT);
     textSize(55);
 
@@ -62,6 +56,12 @@ function setup() {
             thirdrandomnum = num4 * num5
         }
     }
+
+     textAlign(CENTER, LEFT);
+    textSize(55);
+    text(`${firstrandumnum}`, width / 6, height / 2);
+    text(`${secondrandomnum}`, width / 2, height / 2);
+    text(`${thirdrandomnum}`, width - 35, height / 2);
 }
 
 function mouseClicked() {
