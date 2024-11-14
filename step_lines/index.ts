@@ -33,10 +33,10 @@ function setup() {
     }
 
     stroke("red");
-    i = GRID
-    while (i < SIZE) {
-        line(GRID * (i / GRID), i, SIZE - GRID, i)
-        i += GRID
+    let v = GRID
+    while (v < SIZE) {
+        line(GRID * (v / GRID), v, SIZE - GRID, v)
+        v += GRID
     }
 
 }
