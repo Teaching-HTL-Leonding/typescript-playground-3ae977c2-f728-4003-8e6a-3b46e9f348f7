@@ -18,7 +18,7 @@ function setup() {
     line(MARGIN, i, mouseX, mouseY);
     line(width - MARGIN, i, mouseX, mouseY);
 
-    stroke("lime");
+    stroke("green");
     line(i, MARGIN, mouseX, mouseY);
     line(i, height - MARGIN, mouseX, mouseY);
 
