@@ -14,11 +14,11 @@ function setup() {
   // <<< Add your code here
   let i = MARGIN;
   while (i <= SIZE - MARGIN) {
-    stroke("yellow");
+    stroke("RGB");
     line(MARGIN, i, mouseX, mouseY);
     line(width - MARGIN, i, mouseX, mouseY);
 
-    stroke("green");
+    stroke("lime");
     line(i, MARGIN, mouseX, mouseY);
     line(i, height - MARGIN, mouseX, mouseY);
 
