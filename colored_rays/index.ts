@@ -16,11 +16,11 @@ function mouseMoved() {
   let i = MARGIN;
   while (i <= SIZE - MARGIN) {
     rayColor = (rayColor + 0.25) % 360
-    stroke("yellow");
+    stroke(rayColor, 100, 100);
     line(MARGIN, i, mouseX, mouseY);
     line(width - MARGIN, i, mouseX, mouseY);
 
-    stroke("lime");
+    stroke(rayColor, 100, 100);
     line(i, MARGIN, mouseX, mouseY);
     line(i, height - MARGIN, mouseX, mouseY);
 
