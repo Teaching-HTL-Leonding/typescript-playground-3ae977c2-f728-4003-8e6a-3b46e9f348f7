@@ -7,15 +7,12 @@ function setup() {
 
     noStroke();
 
-    let i = GRID;
-    while (i < SIZE - GRID) {
-        fill("yellow");
+    for (let i = GRID; i < SIZE - GRID; i += GRID) {
+        fill("yellow")
         rect(i, i, GRID, GRID);
 
-        fill("lime");
+        fill("lime")
         rect(i, height - GRID - i, GRID, GRID);
-
-        i += GRID;
     }
 
 }
