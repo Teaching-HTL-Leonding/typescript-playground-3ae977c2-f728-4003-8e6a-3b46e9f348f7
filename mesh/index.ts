@@ -9,12 +9,15 @@ function setup() {
   strokeWeight(1);
   stroke("lime");
 
-  line(MARGIN, MARGIN, SIZE - MARGIN, MARGIN)
-
   let i = MARGIN
-  while(i <= SIZE - MARGIN) {
-    line(MARGIN, i, SIZE - MARGIN, MARGIN)
+  while (i <= SIZE - MARGIN) {
+    point(MARGIN, i)
+    
+    let j = MARGIN
+     while (j <= SIZE - MARGIN) {
+      line(MARGIN, i, SIZE - MARGIN, j)
+      j += MARGIN
+     }
     i += MARGIN
   }
-  
 }
