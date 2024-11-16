@@ -26,3 +26,8 @@ function setup() {
     stroke(color1, 100, 100);
   }
 }
+
+
+
+
+}
