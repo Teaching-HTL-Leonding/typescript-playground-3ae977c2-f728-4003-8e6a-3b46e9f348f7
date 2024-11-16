@@ -23,5 +23,6 @@ function setup() {
      }
     i += MARGIN 
     color1 += 60
+    stroke(color1, 100, 100);
   }
 }
