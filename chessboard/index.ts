@@ -16,13 +16,20 @@ function setup() {
         fill("brown")
         rect(SQUARE_SIZE, i, SQUARE_SIZE, i)
         i += SQUARE_SIZE
-        let v = SQUARE_SIZE
-        fill("beige")
-        rect(v, i, v, i)
-        v += SQUARE_SIZE
-        fill("brown")
-        rect(v, i, v, i)
-        v += SQUARE_SIZE
+        
     }
-    
+
+    let v = SQUARE_SIZE
+      while(v < SIZE - SQUARE_SIZE) {
+        fill("beige")
+        rect(v, SQUARE_SIZE, v, SQUARE_SIZE)
+        v += SQUARE_SIZE
+        
+        fill("brown")
+        rect(v, SQUARE_SIZE, v, SQUARE_SIZE)
+        v += SQUARE_SIZE
+        i += SQUARE_SIZE
+        
+    }
+
 }
