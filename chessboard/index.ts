@@ -9,7 +9,7 @@ function setup() {
 
     let i = SQUARE_SIZE
     let v = SQUARE_SIZE
-    while(i < SIZE) {
+    while(i < SIZE - SQUARE_SIZE) {
         fill("beige")
         rect(v, i, v, i)
         i += SQUARE_SIZE
