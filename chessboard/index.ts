@@ -12,11 +12,9 @@ function setup() {
     while(i < SIZE) {
         fill("beige")
         rect(v, i, v, i)
-        v += SQUARE_SIZE
         i += SQUARE_SIZE
         fill("brown")
         rect(v, i, v, i)
-        v += SQUARE_SIZE
         i += SQUARE_SIZE
     }
 }
