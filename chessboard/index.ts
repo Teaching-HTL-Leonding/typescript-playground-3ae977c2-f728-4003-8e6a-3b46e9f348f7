@@ -8,28 +8,18 @@ function setup() {
     noStroke();
 
     let i = SQUARE_SIZE
-    
-    while(i < SIZE - SQUARE_SIZE) {
-        fill("beige")
-        rect(SQUARE_SIZE, i, SQUARE_SIZE, i)
-        i += SQUARE_SIZE
-        fill("brown")
-        rect(SQUARE_SIZE, i, SQUARE_SIZE, i)
-        i += SQUARE_SIZE
-        
-    }
-
     let v = SQUARE_SIZE
-      while(v < SIZE - SQUARE_SIZE) {
+
+    while (i < SIZE - SQUARE_SIZE) {
         fill("beige")
-        rect(v, SQUARE_SIZE, v, SQUARE_SIZE)
-        v += SQUARE_SIZE
-        
+        rect(v, i, v, i)
+        i += SQUARE_SIZE
         fill("brown")
-        rect(v, SQUARE_SIZE, v, SQUARE_SIZE)
-        v += SQUARE_SIZE
+        rect(v, i, v, i)
         i += SQUARE_SIZE
         
+
     }
 
+   
 }
