@@ -14,8 +14,7 @@ function setup() {
 
   let i = MARGIN
   while (i <= SIZE - MARGIN) {
-    point(MARGIN, i)
-    
+   
     let j = MARGIN
      while (j <= SIZE - MARGIN) {
       line(MARGIN, i, SIZE - MARGIN, j)
@@ -30,4 +29,3 @@ function setup() {
 
 
 
-}
