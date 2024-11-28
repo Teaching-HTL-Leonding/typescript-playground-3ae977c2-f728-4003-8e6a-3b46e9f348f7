@@ -15,7 +15,8 @@ function setup() {
         for (let x = 0; x <= SIZE; x += CIRCLE_DIAMETER) {
             circle(0, 0, CIRCLE_DIAMETER)
             translate(CIRCLE_DIAMETER, 0)
-            pop()
         }
+        pop()
+        translate(0, CIRCLE_DIAMETER);
     }
 }
