@@ -12,15 +12,16 @@ function setup() {
     strokeWeight(1);
     stroke("yellow");
     noFill();
-
-    for (let y = 0; y <= SIZE; y += SIDE_LENGTH) {
-        push()
-
+    
+    translate(-SIDE_LENGTH / 2, - HEIGHT / 2)
+    for (let y = 0; y <= SIZE + HEIGHT; y += HEIGHT) {
+      
+        push();
         for (let x = 0; x <= SIZE; x += SIDE_LENGTH) {
-            triangle(0, SIDE_LENGTH, SIDE_LENGTH * 0.5, 0, SIDE_LENGTH, SIDE_LENGTH)
-            translate(SIDE_LENGTH, 0)
+            triangle(0, 0, SIDE_LENGTH / 2, -HEIGHT, SIDE_LENGTH, 0);
+            translate(SIDE_LENGTH, 0); 
         }
-        pop()
+        pop();
         translate(0, HEIGHT);
     }
 }
