@@ -25,18 +25,16 @@ function setup() {
     strokeWeight(2);
 
     // Draw left part of the lines
-    stroke("yellow")
-    i = GRID;
-    while (i < SIZE) {
-        line(GRID, i, GRID * (i / GRID), i)
-        i += GRID;
+    stroke("red");
+    for(i = GRID; i <= SIZE - GRID; i += GRID) {
+        line(GRID, i, SIZE - GRID, i)
     }
 
-    stroke("red");
-    let v = GRID
-    while (v < SIZE) {
-        line(GRID * (v / GRID), v, SIZE - GRID, v)
-        v += GRID
+    
+    stroke("yellow");
+    for(i = GRID; i <= SIZE - GRID; i += GRID) {
+        line(GRID * (i / GRID), i, SIZE - GRID, i)
+        
     }
 
 }
