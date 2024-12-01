@@ -7,19 +7,19 @@ function setup() {
 
     noStroke();
 
-    let i = SQUARE_SIZE
-    let v = SQUARE_SIZE
+    let i = 0;
+    while (i < 64) {
+        const row = Math.floor(i / 8);
+        const col = i % 8;
+        if ((row % 2 === 0 && col % 2 === 1) || (row % 2 === 1 && col % 2 === 0)) {
+            fill("brown");
+        } else {
+            fill("lightyellow");
+        }
 
-    while (i < SIZE - SQUARE_SIZE) {
-        fill("beige")
-        rect(v, i, v, i)
-        i += SQUARE_SIZE
-        fill("brown")
-        rect(v, i, v, i)
-        i += SQUARE_SIZE
-        
-
+       rect(SQUARE_SIZE + col * SQUARE_SIZE, SQUARE_SIZE + row * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE);
+        i++;
     }
 
-   
+    
 }
