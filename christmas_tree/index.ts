@@ -14,8 +14,4 @@ function setup() {
   fill("green");
   noStroke();
 
-  
-  for(let i = INITIAL_TRIANGLE_BASE_WIDTH; i <= SIZE / 1.85; i *= 1.5) {
-    triangle(SIZE / 2 - 70, i * 2, SIZE / 2, 80, SIZE / 2 + 70, i * 2)
-  }
 }
