@@ -17,6 +17,7 @@ function setup() {
   let trianglewidth = INITIAL_TRIANGLE_BASE_WIDTH
   for(let i = 0; i < NUMBER_OF_LAYERS; i ++) {
     triangle(- trianglewidth / 2, trianglewidth / 2, 0, 0, trianglewidth / 2, trianglewidth / 2)
-    translate(0, trianglewidth / 2)
+    translate(0, trianglewidth / 4)
+    trianglewidth *= 1.5
   }
 }
