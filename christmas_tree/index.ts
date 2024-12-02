@@ -8,16 +8,29 @@ const TRUNK_WIDTH = 50;
 const TRUNK_HEIGHT = 50;
 
 function setup() {
+  colorMode(HSB)
+  let color1 = 0
   createCanvas(500, 500);
   background("black");
-  fill("green");
   noStroke();
 
   translate(width / 2, TOP_MARGIN)
   let trianglewidth = INITIAL_TRIANGLE_BASE_WIDTH
-  for(let i = 0; i < NUMBER_OF_LAYERS; i ++) {
+  for (let i = 0; i < NUMBER_OF_LAYERS; i++) {
+
+    fill("green");
     triangle(- trianglewidth / 2, trianglewidth / 2, 0, 0, trianglewidth / 2, trianglewidth / 2)
+    fill(color1, 40, 40)
+    circle(- trianglewidth / 2, trianglewidth / 2 + SPHERE_DIAMETER / 2, SPHERE_DIAMETER)
+    circle(trianglewidth / 2, trianglewidth / 2 + SPHERE_DIAMETER / 2, SPHERE_DIAMETER)
     translate(0, trianglewidth / 4)
     trianglewidth *= 1.5
+    color1 += 100
   }
+
+  
+  
+  fill("brown")
+  translate(0, trianglewidth / 1.5 / 2 / 2)
+  rect(- TRUNK_WIDTH / 2, 0, TRUNK_WIDTH, TRUNK_HEIGHT)
 }
