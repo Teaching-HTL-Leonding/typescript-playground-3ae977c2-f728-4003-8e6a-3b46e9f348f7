@@ -7,14 +7,5 @@ function setup() {
 
     noStroke();
 
-    let i = 0
-    while (i < SIZE) {
-        fill("lime")
-        rect(0, i, SIZE, STRIPE_THICKNESS)
-        i += STRIPE_THICKNESS
-        fill("yellow")
-        rect(0, i, SIZE, STRIPE_THICKNESS)
-        i += STRIPE_THICKNESS
-    }
-   
+    // <<< Add your code here
 }
