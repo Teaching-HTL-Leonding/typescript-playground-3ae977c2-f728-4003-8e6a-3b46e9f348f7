@@ -18,7 +18,7 @@ function mouseMoved() {
     strokeWeight(2);
 
     noFill();
-    stroke("aqua");
+    stroke(colorOfLines, 100, 100);
 
     for (let i = 0; i < 601; i++) {
         push()
@@ -26,6 +26,7 @@ function mouseMoved() {
             line(0, 0, 10, 5)
             line(10, 4.6, 0, 10 )
             translate(0, 10)
+            colorOfLines += 60
         }
         pop()
         translate(10, 0)
