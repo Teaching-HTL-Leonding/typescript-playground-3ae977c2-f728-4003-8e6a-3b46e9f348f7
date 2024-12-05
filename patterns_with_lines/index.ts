@@ -38,11 +38,11 @@ function mouseMoved() {
     rect(0, 260, 601, 50)
 
     textAlign(CENTER, LEFT)
-    textSize(20)
+    textSize(15)
     fill("white")
-    text(`${mouseX} of 601`, 50, 280)
+    text(`${mouseX} of 601 =`, 50, 280)
+    text(`${(mouseX * 100 / 601) + 100}`, 180, 280)
 
-    for(let i = 0; i < 601; i++) {
-        text(`{}`)
-    }
+
+
 }
