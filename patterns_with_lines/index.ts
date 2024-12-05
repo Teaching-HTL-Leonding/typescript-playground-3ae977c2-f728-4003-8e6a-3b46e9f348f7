@@ -13,23 +13,23 @@ function setup() {
 function mouseMoved() {
     colorMode(HSB)
     let colorOfLines = 0
+    let sizeofpatter = 10
     resetMatrix();
     background("black");
     strokeWeight(2);
-
     noFill();
-    stroke(colorOfLines, 100, 100);
 
     for (let i = 0; i < 601; i++) {
         push()
         for (let j = 0; j < 601; j++) {
-            line(0, 0, 10, 5)
-            line(10, 4.6, 0, 10 )
-            translate(0, 10)
-            colorOfLines += 60
+            stroke(colorOfLines, 100, 100)
+            line(0, 0, sizeofpatter, 5)
+            line(10, 4.6, 0, sizeofpatter)
+            translate(0, sizeofpatter)
         }
         pop()
         translate(10, 0)
+        colorOfLines += 6
     }
 
     resetMatrix()
@@ -41,4 +41,8 @@ function mouseMoved() {
     textSize(20)
     fill("white")
     text(`${mouseX} of 601`, 50, 280)
+
+    for(let i = 0; i < 601; i++) {
+        text(`{}`)
+    }
 }
