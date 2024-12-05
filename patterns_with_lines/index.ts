@@ -43,4 +43,5 @@ function mouseMoved() {
     fill("white");
     text(`${mouseX} of 601 =`, 50, 280);
     text(`${inpercent} %`, 120, 280);
+
 }
