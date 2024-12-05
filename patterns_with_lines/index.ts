@@ -11,6 +11,8 @@ function setup() {
 }
 
 function mouseMoved() {
+    colorMode(HSB)
+    let colorOfLines = 0
     resetMatrix();
     background("black");
     strokeWeight(2);
@@ -34,4 +36,8 @@ function mouseMoved() {
     noStroke()
     rect(0, 260, 601, 50)
 
+    textAlign(CENTER, LEFT)
+    textSize(20)
+    fill("white")
+    text(`${mouseX} of 601`, 50, 280)
 }
