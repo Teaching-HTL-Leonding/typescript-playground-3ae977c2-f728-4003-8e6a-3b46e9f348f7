@@ -18,13 +18,20 @@ function mouseMoved() {
     noFill();
     stroke("aqua");
 
-   for(let i = 0; i < 601; i++) {
-    push()
-    for(let j = 0; j < 601; j++) {
-      line(0, 0, 10, 10, 0, 10) 
-      translate(0, 10) 
+    for (let i = 0; i < 601; i++) {
+        push()
+        for (let j = 0; j < 601; j++) {
+            line(0, 0, 10, 5)
+            line(10, 4.6, 0, 10 )
+            translate(0, 10)
+        }
+        pop()
+        translate(10, 0)
     }
-    pop()
-    translate(10, 0)
-   }
+
+    resetMatrix()
+    fill("black")
+    noStroke()
+    rect(0, 260, 601, 50)
+
 }
