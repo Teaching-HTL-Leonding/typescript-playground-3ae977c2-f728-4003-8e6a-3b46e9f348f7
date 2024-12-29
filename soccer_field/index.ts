@@ -9,7 +9,6 @@ const firstNames: string[] = [
   "Eduardo", "Federico", "Jude", "Rodrygo", "Vinícius", "Kylian"
 ];
 
-// Last names
 const lastNames: string[] = [
   "Courtois", "Vázquez", "Rüdiger", "Mendy", "García",
   "Camavinga", "Valverde", "Bellingham", "Goes", "Júnior", "Mbappé"
@@ -30,6 +29,11 @@ function setup() {
   translate(MARGIN, MARGIN);
 
   rect(0, 0, 100, 70);
+
+  fill("white")
+  line(50, 0, 50, 70)
+  noFill()
+  circle(50, 35, 9.15 * 2)
 
   fill("#008000d0");
   noStroke();
