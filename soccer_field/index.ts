@@ -44,6 +44,8 @@ function setup() {
   circle(89, 35, 1)
   circle(50, 35, 1)
 
+  
+
   noFill()
   circle(50, 35, 9.15 * 2)
 
