@@ -11,21 +11,21 @@ function setup() {
   colorMode(HSB);
   angleMode(DEGREES);
 
-  const x = random(MARGIN, WIDTH - MARGIN);
-  const y = random(MARGIN, HEIGHT - MARGIN);
-  const charSize = random(50, 150);
-  const textColor = random(0, 360);
-  const angle = random(-90, 90);
-
   for (let i = 0; i < wordToGuess.length; i++) {
+    const x = random(MARGIN, WIDTH - MARGIN);
+    const y = random(MARGIN, HEIGHT - MARGIN);
+    const size = random(50, 150);
+    const color = random(0, 360);
+    const angle = random(-90, 90);
+    
+    push();
+    translate(x, y);
+    rotate(angle);
+    fill(color, 100, 100);
+    textSize(size);
+    text(wordToGuess[i], 0, 0);
+    pop();
 
-
-    translate(x, y)
-    rotate(angle)
-    fill(textColor, 100, 100)
-    textSize(charSize)
-    text(wordToGuess[i], 0, 0)
-    resetMatrix()
   }
 }
 
