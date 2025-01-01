@@ -11,7 +11,19 @@ function setup() {
   colorMode(HSB);
   angleMode(DEGREES);
 
-  // <<< Add your code here
+  const x = random(MARGIN, WIDTH - MARGIN)
+  const y = random(MARGIN, HEIGHT - MARGIN)
+  const color = random(1, 360)
+  const angle = random(-90, 90)
+
+  fill(color, 100, 100)
+  textSize(55)
+  for(let i = 0; i < wordToGuess.length; i++) {
+  translate(x, y)
+  text(wordToGuess[i], 0, 0)
+  rotate(angle)
+  resetMatrix
+  }
 }
 
 function guess(textInput: string) {
