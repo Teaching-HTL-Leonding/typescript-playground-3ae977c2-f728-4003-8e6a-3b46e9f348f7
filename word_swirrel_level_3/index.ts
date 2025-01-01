@@ -1,6 +1,4 @@
-//           +------------- Syntax for datatype "array of strings"
-//           |          +-- Elements of array are enclosed with []
-//           V          V
+
 const WORDS: string[] = [
     "apple",
     "banana",
