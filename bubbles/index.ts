@@ -1,4 +1,3 @@
-
 const circlesCenterX: number[] = [];    
 const circlesCenterY: number[] = [];   
 const circlesDiameter: number[] = [];   
@@ -15,12 +14,10 @@ const availableColors = [
   "gold",
 ]
 
-// setup runs once at the start
 function setup() {
   createCanvas(400, 400);
 }
 
-// draw runs continuously in a loop
 function draw() {
   background("black");
 
