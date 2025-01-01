@@ -2,15 +2,19 @@ const WIDTH = 500;
 const HEIGHT = 300;
 const MARGIN = 50;
 const WORDS: string[] = [
-  "apple",
-  "banana",
-  "cherry",
+"apple",
+"banana",
+"cherry",
+"oranges",
+"grapes",
+"berry",
+"house",
+"peach"
 ]
 
-let wordToGuess = ""
+let wordToGuess = random(WORDS);
 
 function setup() {
-  wordToGuess = random(WORDS)
   createCanvas(WIDTH, HEIGHT);
   background("black");
   textAlign(CENTER, CENTER);
@@ -40,7 +44,6 @@ function setup() {
 }
 
 function guess(textInput: string) {
-
   fill("white");
 
   if (textInput === wordToGuess) {
