@@ -1,4 +1,4 @@
-const INITIAL_FILL = "3,7,8,3,10,2"
+const INITIAL_FILL = "3,7,8,9,10,2"
 
 const SILO_MAX = 10;
 const CRICITAL_FILL = 8;
@@ -47,10 +47,8 @@ function draw() {
   }
 
   stroke("yellow")
-  strokeWeight(3)
-
+  strokeWeight(2)
   translate(SILO_GAP, 80)
-
 
   push()
   for (let i = 0; i < INITIAL_FILL.length / 2; i++) {
@@ -59,6 +57,11 @@ function draw() {
     translate(75, 0)
   }
   pop()
+
+  resetMatrix()
+  translate(SILO_GAP, 400)
+
+  
 
 }
 
