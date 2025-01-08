@@ -54,6 +54,15 @@ function draw() {
   for (let i = 0; i < INITIAL_FILL.length / 2; i++) {
     line(0, 0, 0, 320)
     line(50, 0, 50, 320)
+
+    rect(0, - 35, 20, 20)
+    rect(30, - 35, 20, 20)
+
+    push()
+    fill("black")
+    triangle(5, - 30, 15, -30, 10, - 20)
+
+    pop()
     translate(75, 0)
   }
   pop()
@@ -61,7 +70,9 @@ function draw() {
   resetMatrix()
   translate(SILO_GAP, 400)
 
-  
+  for (let i = 0; i <= width - SILO_GAP * 2; i += 75) {
+    line(i, 0, i + 50, 0)
+  }
 
 }
 
