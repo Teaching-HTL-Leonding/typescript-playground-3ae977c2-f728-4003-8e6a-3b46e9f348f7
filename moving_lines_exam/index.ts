@@ -20,7 +20,8 @@ let lineEndDy: number[] = [];
 let minColor = 0;               // Lower bound of random hue value
 let maxColor = 360;
 
-let amountOfLines = 8
+let amountOfLines: number[] = []
+let lines: number[] = [];
 
 // Upper bound of random hue value
 
@@ -29,7 +30,7 @@ function setup() {
     colorMode(HSB);
 
     // Set random start and end position
-    for (let i = 0; i < amountOfLines; i++) {
+    for (let i = 0; i < amountOfLines.length; i++) {
 
         lineStartX.push(random(50, 450));
         lineStartY.push(random(50, 450));
@@ -46,6 +47,15 @@ function setup() {
         lineColor.push(random(minColor, maxColor));
     }
 
+    let num = 0;
+    for (let i = 0; i < CONFIGURATION.length; i++) {
+        if (CONFIGURATION[i] === ";") {
+            amountOfLines.length = num
+            num = 0
+        } else if (CONFIGURATION[i] === "-") {
+
+        }
+    }
 }
 
 function draw() {
@@ -54,7 +64,7 @@ function draw() {
 
     // Draw current line
 
-    for (let i = 0; i < amountOfLines ; i++) {
+    for (let i = 0; i < amountOfLines.length; i++) {
         push();
         stroke(lineColor[i], 100, 100);
         strokeWeight(2);
@@ -100,7 +110,7 @@ function mouseClicked() {
     if (mouseX > 20 && mouseX < 70) {
         if (mouseY > 20 && mouseY < 70) {
 
-            amountOfLines++
+            amountOfLines.length++
             lineStartX.push(random(50, 450));
             lineStartY.push(random(50, 450));
             lineEndX.push(random(50, 450));
@@ -114,21 +124,19 @@ function mouseClicked() {
         }
     }
 
+    if (mouseX > 80 && mouseY < 130) {
+        if (mouseY > 20 && mouseY < 70) {
 
-  
-        if (mouseX > 80 && mouseY < 130) {
-            if (mouseY > 20 && mouseY < 70) {
+            amountOfLines.length--
+            lineStartY.splice(0, 1)
+            lineEndX.splice(0, 1);
+            lineEndY.splice(0, 1);
 
-                amountOfLines--
-                lineStartY.splice(0, 1)
-                lineEndX.splice(0, 1);
-                lineEndY.splice(0, 1);
-
-                lineStartDx.splice(0, 1);
-                lineStartDy.splice(0, 1);
-                lineEndDx.splice(0, 1);
-                lineEndDy.splice(0, 1);
-                lineColor.splice(0, 1);
-            }
+            lineStartDx.splice(0, 1);
+            lineStartDy.splice(0, 1);
+            lineEndDx.splice(0, 1);
+            lineEndDy.splice(0, 1);
+            lineColor.splice(0, 1);
         }
     }
+}
