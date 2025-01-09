@@ -20,7 +20,7 @@ let lineEndDy: number[] = [];
 let minColor = 0;               // Lower bound of random hue value
 let maxColor = 360;
 
-let amountOfLines: number[] = []
+let amountOfLines = 5
 let lines: number[] = [];
 
 // Upper bound of random hue value
@@ -30,7 +30,7 @@ function setup() {
     colorMode(HSB);
 
     // Set random start and end position
-    for (let i = 0; i < amountOfLines.length; i++) {
+    for (let i = 0; i < amountOfLines; i++) {
 
         lineStartX.push(random(50, 450));
         lineStartY.push(random(50, 450));
@@ -50,10 +50,11 @@ function setup() {
     let num = 0;
     for (let i = 0; i < CONFIGURATION.length; i++) {
         if (CONFIGURATION[i] === ";") {
-            amountOfLines.length = num
+            amountOfLines = num
             num = 0
         } else if (CONFIGURATION[i] === "-") {
-
+            minColor = num
+            num = 0
         }
     }
 }
@@ -61,22 +62,17 @@ function setup() {
 function draw() {
     background("black");
 
-
-    // Draw current line
-
-    for (let i = 0; i < amountOfLines.length; i++) {
+    for (let i = 0; i < amountOfLines; i++) {
         push();
         stroke(lineColor[i], 100, 100);
         strokeWeight(2);
         line(lineStartX[i], lineStartY[i], lineEndX[i], lineEndY[i]);
 
-        // Move start and end point
         lineStartX[i] += lineStartDx[i];
         lineStartY[i] += lineStartDy[i];
         lineEndX[i] += lineEndDx[i];
         lineEndY[i] += lineEndDy[i];
 
-        // Reverse direction when edge has been reached
         if (lineStartX[i] < 0 || lineStartX[i] > width) {
             lineStartDx[i] = -lineStartDx[i];
         }
@@ -110,7 +106,7 @@ function mouseClicked() {
     if (mouseX > 20 && mouseX < 70) {
         if (mouseY > 20 && mouseY < 70) {
 
-            amountOfLines.length++
+            amountOfLines++
             lineStartX.push(random(50, 450));
             lineStartY.push(random(50, 450));
             lineEndX.push(random(50, 450));
@@ -127,7 +123,7 @@ function mouseClicked() {
     if (mouseX > 80 && mouseY < 130) {
         if (mouseY > 20 && mouseY < 70) {
 
-            amountOfLines.length--
+            amountOfLines--
             lineStartY.splice(0, 1)
             lineEndX.splice(0, 1);
             lineEndY.splice(0, 1);
