@@ -52,12 +52,12 @@ function setup() {
         if (CONFIGURATION[i] === ";") {
             amountOfLines = num
             num = 0
-        } else if (CONFIGURATION[i] === "-") {
-            minColor = num
-            num = 0
+        } else {
+            num = num * 10 + parseInt(CONFIGURATION[i].trim());
         }
     }
 }
+
 
 function draw() {
     background("black");
