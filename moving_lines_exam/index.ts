@@ -1,10 +1,4 @@
-// Configuration for the number of lines, and the range of colors The format is:
-// <number of lines>;<min hue>-<max hue>
-//
-// "number of lines" is the number of lines to draw, can be between 1 and 30
-// "min hue" is the minimum hue (HSB color space), can be between 0 and 360
-// "max hue" is the maximum hue (HSB color space), can be between 0 and 360
-const CONFIGURATION = "5;0-360";
+const CONFIGURATION = "2;150-200.";
 
 let lineStartX: number[] = [];     // Start coordinates of line
 let lineStartY: number[] = [];
@@ -20,7 +14,7 @@ let lineEndDy: number[] = [];
 let minColor = 0;               // Lower bound of random hue value
 let maxColor = 360;
 
-let amountOfLines = 5
+let amountOfLines
 let lines: number[] = [];
 
 // Upper bound of random hue value
@@ -28,6 +22,26 @@ let lines: number[] = [];
 function setup() {
     createCanvas(500, 500);
     colorMode(HSB);
+
+    let num = 0;
+    for (let i = 0; i < CONFIGURATION.length; i++) {
+        if (CONFIGURATION[i] === "-") {
+            minColor = num
+            console.log(minColor)
+            num = 0
+
+        } else if (CONFIGURATION[i] === ".") {
+            maxColor = num
+            console.log(maxColor)
+            num = 0
+
+        } else if (CONFIGURATION[i] === ";") {
+            amountOfLines = num
+            num = 0
+        } else {
+            num = num * 10 + parseInt(CONFIGURATION[i].trim());
+        }
+    }
 
     // Set random start and end position
     for (let i = 0; i < amountOfLines; i++) {
@@ -47,15 +61,6 @@ function setup() {
         lineColor.push(random(minColor, maxColor));
     }
 
-    let num = 0;
-    for (let i = 0; i < CONFIGURATION.length; i++) {
-        if (CONFIGURATION[i] === ";") {
-            amountOfLines = num
-            num = 0
-        } else {
-            num = num * 10 + parseInt(CONFIGURATION[i].trim());
-        }
-    }
 }
 
 
@@ -124,6 +129,7 @@ function mouseClicked() {
         if (mouseY > 20 && mouseY < 70) {
 
             amountOfLines--
+            lineStartX.splice(0, 1)
             lineStartY.splice(0, 1)
             lineEndX.splice(0, 1);
             lineEndY.splice(0, 1);
