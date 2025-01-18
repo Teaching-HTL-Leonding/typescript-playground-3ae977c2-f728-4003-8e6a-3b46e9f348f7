@@ -72,6 +72,7 @@ function draw() {
 
     if (keyIsDown(39) || keyIsDown(37)) {
         animation++;
+        animation = animation % 40;
     }
 
     pop();
