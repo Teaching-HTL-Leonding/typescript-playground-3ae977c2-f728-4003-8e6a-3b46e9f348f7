@@ -7,6 +7,7 @@ function setup() {
 }
 
 function mouseClicked() {
+  nextface = !nextface
   smile(nextface)
 }
 
