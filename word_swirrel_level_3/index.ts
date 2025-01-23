@@ -1,21 +1,27 @@
-
+//           +------------- Syntax for datatype "array of strings"
+//           |          +-- Elements of array are enclosed with []
+//           V          V
 const WORDS: string[] = [
     "apple",
     "banana",
     "cherry",
     "orange",
     "grapes",
+    "lemon",
     "melon",
     "peach",
     "plum",
     "berry",
     "water",
-    "lemon",
-    "pizza",
     "cloud",
     "bread",
     "cheese",
- 
+    "pizza",
+    "table",
+    "chair",
+    "house",
+    "grass",
+    "flower"
   ];
   
   const WIDTH = 500;
@@ -31,6 +37,8 @@ const WORDS: string[] = [
     colorMode(HSB);
     angleMode(DEGREES);
   
+    // Use random() to get a random word from the WORDS array.
+    // Every time you run the program, a different word will be selected.
     wordToGuess = random(WORDS);
   
     for(let i = 0; i < wordToGuess.length; i++) {
