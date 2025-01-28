@@ -1,41 +1,51 @@
-let nextface = true
+let nextSmiling = true
+
 function setup() {
   createCanvas(500, 500);
   angleMode(DEGREES);
 
-  smile(nextface);
+  // Function CALL
+  // +------------------------------ Function name
+  // |  +--------------------------- Function parameter
+  // v  v
+  smile(nextSmiling);
 }
 
 function mouseClicked() {
-  nextface = !nextface
-  smile(nextface)
+  smile(nextSmiling)
+  nextSmiling = !nextSmiling
 }
 
+
 function smile(happy: boolean) {
+  const x = random(70, 430)
+  const y = random(70, 430)
 
   push()
-  translate(random(0, width), random(0, height))
+  translate(x, y)
   scale(0.2)
+
   stroke("black");
-  strokeWeight(8)
-  if (happy) {
+  strokeWeight(10);
+
+  if (happy === true) {
     fill("yellow");
+
+    circle(200, 200, 375);
+    noFill();
+    arc(200, 250, 200, 150, 0, 180);
+
   } else {
     fill("lime");
+
+    circle(200, 200, 375);
+    noFill();
+    arc(200, 300, 200, 150, 180, 0);
   }
 
-  circle(200, 200, 350);
-
-  fill("black");
+ fill("black");
   circle(125, 125, 20);
   circle(275, 125, 20);
 
-  noFill();
-
-  if (happy) {
-    arc(200, 250, 200, 150, 0, 180);
-  } else {
-    arc(200, 300, 200, 150, 180, 360);
-  }
   pop()
 }
