@@ -1,4 +1,4 @@
-let nextSmiling = true
+let nextFace = true
 
 function setup() {
   createCanvas(500, 500);
@@ -8,44 +8,53 @@ function setup() {
   // +------------------------------ Function name
   // |  +--------------------------- Function parameter
   // v  v
-  smile(nextSmiling);
+  smile(true);
 }
 
 function mouseClicked() {
-  smile(nextSmiling)
-  nextSmiling = !nextSmiling
+
+  smile(nextFace)
+  nextFace = !nextFace
+
 }
 
-
 function smile(happy: boolean) {
-  const x = random(70, 430)
-  const y = random(70, 430)
+  const x = random(1, 500)
+  const y = random(1, 500)
+
 
   push()
   translate(x, y)
+
   scale(0.2)
 
-  stroke("black");
-  strokeWeight(10);
-
-  if (happy === true) {
+  if (nextFace === true) {
+    stroke("black");
+    strokeWeight(10);
     fill("yellow");
 
     circle(200, 200, 375);
-    noFill();
-    arc(200, 250, 200, 150, 0, 180);
 
+    fill("black");
+    circle(125, 125, 20);
+    circle(275, 125, 20);
+
+    noFill();
+    arc(200, 250, 200, 150, 50, 150);
   } else {
+    stroke("black");
+    strokeWeight(10);
     fill("lime");
 
     circle(200, 200, 375);
-    noFill();
-    arc(200, 300, 200, 150, 180, 0);
-  }
 
- fill("black");
-  circle(125, 125, 20);
-  circle(275, 125, 20);
+    fill("black");
+    circle(125, 125, 20);
+    circle(275, 125, 20);
+
+    noFill();
+    arc(200, 250, 200, 150, 125, 25);
+  }
 
   pop()
 }
