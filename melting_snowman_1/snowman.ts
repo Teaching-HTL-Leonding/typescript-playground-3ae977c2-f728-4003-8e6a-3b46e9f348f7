@@ -26,33 +26,53 @@ function drawSnowman(numberOfWrongGuesses: number) {
     stroke("black");
     strokeWeight(2);
     fill("aliceblue")
-    circle(0, 350, 250);
-    circle(0, 175, 150);
+    if (numberOfWrongGuesses < 10) {
+        circle(0, 350, 250);
+    }
+    if (numberOfWrongGuesses < 9) {
+        circle(0, 175, 150);
+    }
     pop();
 
     // Eyes
     push();
     noStroke();
     fill("black");
-    circle(-25, 150, 25);
-    circle(25, 150, 25);
+    if (numberOfWrongGuesses < 6) {
+        circle(-25, 150, 25);
+    }
+    if (numberOfWrongGuesses < 7) {
+        circle(25, 150, 25);
+    }
+
     pop();
 
     // Nose
-    push();
-    noStroke();
-    fill("orange");
-    triangle(0, 195, 0, 165, 40, 180);
-    pop();
+    if (numberOfWrongGuesses < 4) {
+        push();
+        noStroke();
+        fill("orange");
+        triangle(0, 195, 0, 165, 40, 180);
+        pop();
+    }
 
     // Mouth
     push();
     fill("black");
     translate(0, 180);
     rotate(45);
-    for (let i = 0; i < 6; i++) {
-        circle(40, 0, 12);
-        rotate(18);
+    if (numberOfWrongGuesses < 3) {
+        for (let i = 0; i < 3; i++) {
+            circle(40, 0, 12);
+            rotate(18);
+        }
+    }
+
+    if (numberOfWrongGuesses < 5) {
+        for (let i = 0; i < 3; i++) {
+            circle(40, 0, 12)
+            rotate(18)
+        }
     }
     pop();
 
@@ -67,7 +87,7 @@ function drawSnowman(numberOfWrongGuesses: number) {
             translate(0, 25);
         }
     }
-    
+
     if (numberOfWrongGuesses < 2) {
         for (let i = 0; i < 3; i++) {
             circle(0, 275, 15)
@@ -77,10 +97,18 @@ function drawSnowman(numberOfWrongGuesses: number) {
     pop();
 
     // Hat
-    push();
-    noStroke();
-    fill("black");
-    rect(-85, 110, 170, 10);
-    rect(-50, 50, 100, 60);
-    pop();
+    if (numberOfWrongGuesses < 8) {
+        push();
+        noStroke();
+        fill("black");
+        rect(-85, 110, 170, 10);
+        rect(-50, 50, 100, 60);
+        pop();
+    }
+
+    stroke("black")
+    textSize(75)
+    if (numberOfWrongGuesses >= 10) {
+        text("GAME OVER", width / 15, height / 2)
+    }
 }
