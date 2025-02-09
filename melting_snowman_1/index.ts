@@ -7,7 +7,6 @@ function setup() {
     // Draw the screen one time
     redraw();
     noLoop(); // Stop calling draw() automatically
-    
 }
 
 function draw() {
