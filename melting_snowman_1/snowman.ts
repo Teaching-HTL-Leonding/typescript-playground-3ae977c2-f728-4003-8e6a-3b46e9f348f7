@@ -106,7 +106,7 @@ function drawSnowman(numberOfWrongGuesses: number) {
         pop();
     }
 
-    stroke("black")
+    fill("red")
     textSize(75)
     if (numberOfWrongGuesses >= 10) {
         text("GAME OVER", width / 15, height / 2)
