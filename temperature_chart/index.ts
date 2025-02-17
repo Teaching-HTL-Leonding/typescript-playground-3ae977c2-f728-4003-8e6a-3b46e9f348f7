@@ -69,9 +69,15 @@ function drawXLabels() {
   for(let i = 0; i < width; i += 35)
   line(i, 0, i, MARGIN)
 
+
 }
 
 function drawTemperatures(temperatures: number[]) {
-  // <<< Add code to draw the temperatures here
+  noStroke()
+  fill("gold")
+
+  for(let i = 0; i < temperatures.length; i ++) {
+    let x = 
+  }
 }
 
