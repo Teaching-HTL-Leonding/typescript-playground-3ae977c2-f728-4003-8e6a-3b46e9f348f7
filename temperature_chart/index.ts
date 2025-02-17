@@ -21,10 +21,11 @@ function setup() {
   // 3. Draw Y labels
   drawYLabels()
   // 4. Draw X labels
+  drawXLabels()
 }
 
 function drawAxes() {
-  
+
   const MARGIN = 12.5
 
   fill("black")
@@ -32,37 +33,45 @@ function drawAxes() {
 
   push()
   translate(MARGIN * 3, MARGIN)
-  line(0, 0, 0, height - MARGIN * 2)
+  line(0, 0, 0, height - MARGIN * 1.8)
   pop()
 
   push()
   translate(MARGIN * 2, height - MARGIN * 3.4)
-  line(0, 0, width - MARGIN * 3, 0)
+  line(0, 0, width - MARGIN * 3.2, 0)
   pop()
 }
 
 function drawYLabels() {
-  // <<< Add code to draw labels for the Y axis here
+
+  const MARGIN = 12.5
+
   push()
-  translate(25, 12.5)
+  translate(MARGIN * 2, MARGIN)
   fill("black")
   strokeWeight(3)
 
-  for(let i = 0; i < height; i += 35) {
-    line(0, i, 25, i)
+  for (let i = 0; i < height; i += 35) {
+    line(0, i, MARGIN * 2, i)
   }
   pop()
 
-  for(let i = 0; i < Numbers.length; i++) {
+  for (let i = 0; i < Numbers.length; i++) {
     text(Numbers[i], 7, 15 + i * 35)
   }
 }
 
 function drawXLabels() {
-  // <<< Add code to draw labels for the X axis here
- 
+  fill("black")
+
+  const MARGIN = 12.5
+  translate(60, height - MARGIN * 4)
+  for(let i = 0; i < width; i += 35)
+  line(i, 0, i, MARGIN)
+
 }
 
 function drawTemperatures(temperatures: number[]) {
   // <<< Add code to draw the temperatures here
 }
+
