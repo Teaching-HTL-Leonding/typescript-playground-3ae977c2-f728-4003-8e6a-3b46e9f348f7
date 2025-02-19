@@ -12,7 +12,7 @@ function setup() {
   createCanvas(300, 300);
 
   addRandomCircle();
-  circle_interval = setInterval(addRandomCircle, 3000);
+  circle_interval = setInterval(addRandomCircle, 1000);
 }
 
 function draw() {
@@ -27,12 +27,37 @@ function draw() {
   fill("yellow")
   textSize(25)
   text(`Points: ${points}`, width / 10, height / 10)
+
+  noStroke();
+  fill("red");
+  textSize(35);
+
+  for (let i = 0; i < 20; i++) {
+    if (circles_x.length >= 10) {
+      clearInterval(circle_interval);
+      circles_x.splice(i, 10);
+      circles_y.splice(i, 10);
+      circles_diameter.splice(i, 10);
+      fill("red")
+      text(`Game Over! Final Score ${points}`, width / 6, height / 2);
+    }
+  }
+
+  if (points <= - 5) {
+    text(`Game Over`, width / 6, height / 2);
+    for (let i = 0; i < 20; i++) {
+      clearInterval(circle_interval);
+      circles_x.splice(i, 10);
+      circles_y.splice(i, 10);
+      circles_diameter.splice(i, 10);
+    }
+  }
 }
 
 function addRandomCircle() {
   circles_x.push(random(50, 250));
   circles_y.push(random(50, 250));
-  circles_diameter.push(random(10, 50));
+  circles_diameter.push(random(10, 30));
 }
 
 function mouseClicked() {
@@ -42,6 +67,8 @@ function mouseClicked() {
       circles_y.splice(i, 1);
       circles_diameter.splice(i, 1);
       points++;
+    } else {
+      points--;
     }
   }
 }
