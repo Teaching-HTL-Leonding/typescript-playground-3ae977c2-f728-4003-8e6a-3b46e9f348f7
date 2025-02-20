@@ -14,7 +14,7 @@ function setup() {
 
   circle_interval = setInterval(addRandomCircle, timer);
   level_interval = setInterval(changeTimer, 10000);
-
+  
 }
 
 function draw() {
@@ -52,10 +52,8 @@ function addRandomCircle() {
 
 function changeTimer() {
 
-  if (circles_x.length < 10) {
-    timer = timer / 2;
-    circle_interval = setInterval(addRandomCircle, timer);
-  }
+  timer = timer / 2;
+  circle_interval = setInterval(addRandomCircle, timer);
 }
 
 function mouseClicked() {
