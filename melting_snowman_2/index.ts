@@ -99,10 +99,3 @@ function drawCurrentWordStatus(font: any, currentWordStatus: string) {
     text(currentWordStatus, 0, 250);
     pop();
 }
-
-function getInitialCurrentWord() {
-    for(let i = 0; i < wordToGuess.length; i++) {
-
-        if(wordToGuess[i] === " ")
-    } 
-}
