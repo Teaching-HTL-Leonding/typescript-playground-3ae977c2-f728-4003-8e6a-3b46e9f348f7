@@ -11,9 +11,17 @@
  * is a space, the corresponding character in the return value must be a space.
  */
 function getInitialCurrentWord(wordToGuess: string): string {
-    // <<< Add code here
+    let result = "";
 
-    return ""; // Placeholder, remove this line once you added your code
+    for (let i = 0; i < wordToGuess.length; i++) {
+        if (wordToGuess[i] === " ") {
+            result += " "
+        } else {
+            result += "_"
+        }
+    }
+
+    return result;
 }
 
 /**
@@ -31,8 +39,18 @@ function getInitialCurrentWord(wordToGuess: string): string {
  */
 function guessKey(key: string, wordToGuess: string, currentWordStatus: string): string {
     // <<< Add code here
+   
+    let result = ""
+    for (let i = 0; i < wordToGuess.length; i++) {
+        if (wordToGuess.toLowerCase()[i] === key.toLowerCase()) {
+            result += wordToGuess[i]
+            
+        } else {
+            result += currentWordStatus[i]
+        }
+    }
 
-    return ""; // Placeholder, remove this line once you added your code
+    return result; // Placeholder, remove this line once you added your code
 }
 
 /**
@@ -51,4 +69,17 @@ function guessKey(key: string, wordToGuess: string, currentWordStatus: string): 
  */
 function drawResult(win: boolean, wrongGuesses: number) {
     // <<< Add code here
+    if(!win) {
+        fill("red")
+        textSize(35)
+        text("Game Over", width / 6, height / 2)
+    } else {
+        if(wrongGuesses === 0) {
+            text("No wrong Guesses", width  / 6, height / 2)
+        } else if  (wrongGuesses === 1 ){
+            text("One wrong guess", width / 6, height / 2)
+        } else {
+            text(`${wrongGuesses} wrong guesses`, width / 6, height / 2)
+        }
+    }
 }
