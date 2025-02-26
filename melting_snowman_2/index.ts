@@ -27,6 +27,11 @@ let wrongGuesses = 0;
  */
 let acceptKeys = true;
 
+function preload() {
+    // Load the font from the web
+    font = loadFont("https://cddataexchange.blob.core.windows.net/images/SyneMono-Regular.ttf");
+}
+
 function setup() {
     // Initially fill the currentWordStatus
     currentWordStatus = getInitialCurrentWord(wordToGuess);
@@ -63,7 +68,6 @@ function keyPressed() {
     if (!acceptKeys) { return; }
 
     // Handle guess
-   
     const newCurrentWordStatus = guessKey(key, wordToGuess, currentWordStatus);
     if (currentWordStatus === newCurrentWordStatus) {
         wrongGuesses++;
@@ -94,9 +98,4 @@ function drawCurrentWordStatus(font: any, currentWordStatus: string) {
     textFont(font);
     text(currentWordStatus, 0, 250);
     pop();
-}
-
-function preload() {
-    // Load the font from the web
-    font = loadFont("https://cddataexchange.blob.core.windows.net/images/SyneMono-Regular.ttf");
 }
