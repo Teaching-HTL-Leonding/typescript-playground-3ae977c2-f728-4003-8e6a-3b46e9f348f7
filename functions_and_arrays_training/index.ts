@@ -43,6 +43,7 @@ function setup() {
     textAlign(LEFT, TOP);
     textSize(15);
     text(result, 10, 10, width - 20, height - 20);
+
 }
 
 /**
@@ -51,23 +52,22 @@ function setup() {
 * @returns The sum of the numbers, 0 if the string is empty
 */
 function getSum(numbersString: string): number {
-    let currentNumber = "";
-    let symbole = 0;
+    let symbole = "";
+    let currentNumber = 0;
 
-    for(let i = 0; i < numbersString.length; i++) {
-        if(numbersString[i] === ",") {
-            symbole += parseInt(currentNumber);
-            currentNumber = "";
+    for (let i = 0; i < numbersString.length; i++) {
+        if (numbersString[i] === ",") {
+            currentNumber += parseInt(symbole);
+            symbole = ""
         } else {
-            currentNumber += parseInt(numbersString[i]);
+            symbole += parseInt(numbersString[i]);
         }
     }
 
-    if(numbersString) {
-        symbole += parseInt(currentNumber);
+    if (numbersString) {
+        currentNumber += parseInt(symbole);
     }
-
-    return symbole; // <<< Remove this line and implement the function
+    return currentNumber;
 }
 
 /**
@@ -77,6 +77,11 @@ function getSum(numbersString: string): number {
 * @returns The start index of the number, -1 if the number is not found
 */
 function getIndexOf(numbersString: string, number: number): number {
+    let start = 0;
+    let currentWord = "";
+
+
+
     return -1; // <<< Remove this line and implement the function
 }
 
@@ -87,7 +92,12 @@ function getIndexOf(numbersString: string, number: number): number {
 * @returns The index of the number, -1 if the number is not found
 */
 function findIndexInArray(array: number[], number: number): number {
-    return -1; // <<< Remove this line and implement the function
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === number) {
+            return i
+        }
+    }
+    return -1;
 }
 
 /**
@@ -121,5 +131,23 @@ function decodeCCard(cardShortcode: string): string {
 * @returns An array of even numbers (e.g. [2, 30, 4]), empty array if no even numbers are found
 */
 function findAllEvenNumbers(numberString: string): number[] {
-    return []; // <<< Remove this line and implement the function
+
+    let evenNumbers: number[] = [];
+    let currentNumber = ""
+
+    //currentNumber += parseInt(numberString)
+
+    for (let i = 0; i < numberString.length; i++) {
+        if (numberString[i] === ",") {
+            let xy = parseInt(currentNumber);
+            if (xy % 2 === 0) {
+                evenNumbers.push(xy)
+            }
+            currentNumber = ""
+        } else {
+            currentNumber += numberString[i];
+        }
+    }
+
+    return evenNumbers; // <<< Remove this line and implement the function
 }
