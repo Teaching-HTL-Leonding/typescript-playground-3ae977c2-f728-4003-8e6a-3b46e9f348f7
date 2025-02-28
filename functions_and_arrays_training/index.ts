@@ -135,8 +135,6 @@ function findAllEvenNumbers(numberString: string): number[] {
     let evenNumbers: number[] = [];
     let currentNumber = ""
 
-    //currentNumber += parseInt(numberString)
-
     for (let i = 0; i < numberString.length; i++) {
         if (numberString[i] === ",") {
             let xy = parseInt(currentNumber);
@@ -149,5 +147,5 @@ function findAllEvenNumbers(numberString: string): number[] {
         }
     }
 
-    return evenNumbers; // <<< Remove this line and implement the function
+    return evenNumbers; 
 }
