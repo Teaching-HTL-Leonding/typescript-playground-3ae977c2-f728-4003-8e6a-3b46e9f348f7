@@ -51,16 +51,20 @@ function setup() {
 * @returns The sum of the numbers, 0 if the string is empty
 */
 function getSum(numbersString: string): number {
-    let numberWithoutComma: number[] = [];
+    let currentNumber = "";
     let symbole = 0;
 
-    for(let i = 0; i <  numbersString.length; i++) {
-        switch(numbersString) {
-            case ",":
-            symbole = parseInt(numbersString);
-            numberWithoutComma.push(symbole);
-            
+    for(let i = 0; i < numbersString.length; i++) {
+        if(numbersString[i] === ",") {
+            symbole += parseInt(currentNumber);
+            currentNumber = "";
+        } else {
+            currentNumber += parseInt(numbersString[i]);
         }
+    }
+
+    if(numbersString) {
+        symbole += parseInt(currentNumber);
     }
 
     return symbole; // <<< Remove this line and implement the function
