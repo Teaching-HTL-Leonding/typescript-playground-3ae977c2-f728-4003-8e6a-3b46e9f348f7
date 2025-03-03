@@ -122,7 +122,53 @@ function findIndexInArray(array: number[], number: number): number {
 * * A: Ace
 */
 function decodeCCard(cardShortcode: string): string {
-    return ""; // <<< Remove this line and implement the function
+    let suits = cardShortcode[0];
+    let ranks = cardShortcode[1];
+
+    let names: string;
+
+    switch (suits) {
+        case "H": names = "Hearts";
+            break;
+        case "S": names = "Spades";
+            break;
+        case "D": names = "Diamonds";
+            break;
+        case "C": names = "Clubs";
+        default: names = "Unknown";
+    }
+
+    switch (ranks) {
+        case "2": ranks = "2";
+            break;
+        case "3": ranks = "3";
+            break;
+        case "4": ranks = "4";
+            break;
+        case "5": ranks = "5";
+            break;
+        case "6": ranks = "6";
+            break;
+        case "7": ranks = "7";
+            break;
+        case "8": ranks = "8";
+            break;
+        case "9": ranks = "9";
+            break;
+        case "T": ranks = "10";
+            break;
+        case "J": ranks = "Jack";
+            break;
+        case "Q": ranks = "Queen";
+            break;
+        case "K": ranks = "King";
+            break;
+        case "A": ranks = "Ace";
+            break;
+        default: "Unknown";
+    }
+
+    return `${suits} of ${ranks}`;
 }
 
 /**
@@ -147,5 +193,5 @@ function findAllEvenNumbers(numberString: string): number[] {
         }
     }
 
-    return evenNumbers; 
+    return evenNumbers;
 }
