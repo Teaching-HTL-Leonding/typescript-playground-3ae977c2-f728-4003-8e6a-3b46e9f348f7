@@ -125,50 +125,51 @@ function decodeCCard(cardShortcode: string): string {
     let suits = cardShortcode[0];
     let ranks = cardShortcode[1];
 
-    let names: string;
+    let suitnames: string;
+    let ranknames: string;
 
     switch (suits) {
-        case "H": names = "Hearts";
+        case "H": suitnames = "Hearts";
             break;
-        case "S": names = "Spades";
+        case "S": suitnames = "Spades";
             break;
-        case "D": names = "Diamonds";
+        case "D": suitnames = "Diamonds";
             break;
-        case "C": names = "Clubs";
-        default: names = "Unknown";
+        case "C": suitnames = "Clubs";
+        default: suitnames = "Unknown";
     }
 
     switch (ranks) {
-        case "2": ranks = "2";
+        case "2": ranknames = "2";
             break;
-        case "3": ranks = "3";
+        case "3": ranknames = "3";
             break;
-        case "4": ranks = "4";
+        case "4": ranknames = "4";
             break;
-        case "5": ranks = "5";
+        case "5": ranknames = "5";
             break;
-        case "6": ranks = "6";
+        case "6": ranknames = "6";
             break;
-        case "7": ranks = "7";
+        case "7": ranknames = "7";
             break;
-        case "8": ranks = "8";
+        case "8": ranknames = "8";
             break;
-        case "9": ranks = "9";
+        case "9": ranknames = "9";
             break;
-        case "T": ranks = "10";
+        case "T": ranknames = "10";
             break;
-        case "J": ranks = "Jack";
+        case "J": ranknames = "Jack";
             break;
-        case "Q": ranks = "Queen";
+        case "Q": ranknames = "Queen";
             break;
-        case "K": ranks = "King";
+        case "K": ranknames = "King";
             break;
-        case "A": ranks = "Ace";
+        case "A": ranknames = "Ace";
             break;
         default: "Unknown";
     }
 
-    return `${suits} of ${ranks}`;
+    return `${ranknames} of ${suitnames}`;
 }
 
 /**
