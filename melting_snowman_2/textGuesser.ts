@@ -65,7 +65,7 @@ function guessKey(key: string, wordToGuess: string, currentWordStatus: string): 
  * * "n wrong guesses" otherwise ("n" is number of wrong guesses).
  */
 function drawResult(win: boolean, wrongGuesses: number) {
-    if (!win) {
+    if (win) {
         fill("red");
         textSize(35);
         text("Game Over !", width / 5, height / 2);
