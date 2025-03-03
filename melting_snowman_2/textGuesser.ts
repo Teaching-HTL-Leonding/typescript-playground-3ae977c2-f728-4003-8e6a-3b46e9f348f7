@@ -37,18 +37,17 @@ function getInitialCurrentWord(wordToGuess: string): string {
  * characters in currentWordStatus must be revealed.
  */
 function guessKey(key: string, wordToGuess: string, currentWordStatus: string): string {
-    let result = ""
+    let result = "";
 
     for (let i = 0; i < wordToGuess.length; i++) {
         if (wordToGuess.toLowerCase()[i] === key.toLowerCase()) {
             result += wordToGuess[i]
-
         } else {
             result += currentWordStatus[i]
         }
     }
 
-    return result;
+    return result; // Placeholder, remove this line once you added your code
 }
 
 /**
@@ -67,16 +66,20 @@ function guessKey(key: string, wordToGuess: string, currentWordStatus: string): 
  */
 function drawResult(win: boolean, wrongGuesses: number) {
     if (!win) {
-        fill("red")
-        textSize(35)
-        text("Game Over", width / 6, height / 2)
+        fill("red");
+        textSize(35);
+        text("Game Over !", width / 5, height / 2);
+    } else if (wrongGuesses === 0) {
+        fill("green");
+        textSize(35);
+        text("No wrong guesses", width / 5, height / 2);
+    } else if (wrongGuesses === 1) {
+        fill("green");
+        textSize(35);
+        text("One wrong guess", width / 6, height / 2);
     } else {
-        if (wrongGuesses === 0) {
-            text("No wrong Guesses", width / 6, height / 2)
-        } else if (wrongGuesses === 1) {
-            text("One wrong guess", width / 6, height / 2)
-        } else {
-            text(`${wrongGuesses} wrong guesses`, width / 6, height / 2)
-        }
+        fill("green");
+        textSize(35);
+        text(`${wrongGuesses} wrong guesses`, width / 6, height / 2);
     }
 }
