@@ -187,7 +187,7 @@ function getHighestCard(hand: string[]): string {
 
         }
     }
-    
+
     return getCardDescription(hand[index]);
 }
 
@@ -202,10 +202,12 @@ function getHighestCard(hand: string[]): string {
 * [0, 0, 0, 0, 0, 2, 0, 2, 1, 0].
 */
 function getCounts(hand: string[]): number[] {
-    for(let i = 0; i < hand.length; i++) {
-        
+    let result: number[] = []
+
+    for (let i = 0; i < hand.length; i++) {
+        result[parseInt(hand[i][0])]++
     }
-    return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    return result;
 }
 
 /**
