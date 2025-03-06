@@ -107,8 +107,8 @@ function splitCardsString(cards: string): string[] {
 */
 function getCardValue(card: string): number {
     let result = 0;
-    
-    switch (card) {
+
+    switch (card[0]) {
         case "1": result += 1;
             break;
         case "2": result += 2;
@@ -148,9 +148,24 @@ function getCardValue(card: string): number {
 * before to get the value of the card.
 */
 function getCardDescription(card: string): string {
-    // DELETE the following line and replace it with
-    // a working solution for the function.
-    return `${getCardValue(card)} of UNKNOWN`;
+    let result = "";
+    let name: string
+
+    switch (card[1]) {
+        case "H":
+            name = "hearts"
+            break;
+        case "S":
+            name = "spades";
+            break;
+        case "D":
+            name = "diamonds";
+            break;
+        case "C":
+            name = "clubs";
+    }
+
+    return `${getCardValue(card)} of ${name}`;
 }
 
 /**
