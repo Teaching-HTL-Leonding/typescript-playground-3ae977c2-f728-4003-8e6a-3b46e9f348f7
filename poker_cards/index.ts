@@ -178,13 +178,14 @@ function getCardDescription(card: string): string {
 */
 function getHighestCard(hand: string[]): string {
     let highestNum = 0;
-    let resut = "";
 
-    for(let i = 0; i < hand.length; i++) {
-        
+    for (let i = 0; i < hand.length; i++) {
+        if (getCardValue[i] > highestNum) {
+            highestNum = getCardValue[i];
+
+        }
     }
-    // DELETE the following line and replace it with
-    // a working solution for the function.
+    
     return getCardDescription('1H');
 }
 
