@@ -219,9 +219,14 @@ function getCounts(hand: string[]): number[] {
 * A hand is a flush if all cards have the same suite.
 */
 function isFlush(hand: string[]): boolean {
-    // DELETE the following line and replace it with
-    // a working solution for the function.
-    return false;
+
+    if (hand[0][1] === hand[1][1] && hand[0][1] === hand[2][1] && hand[0][1] === hand[3][1] && hand[0][1] === hand[4][1]) {
+        return true
+    } else {
+        return false;
+    }
+
+
 }
 
 /**
@@ -236,9 +241,12 @@ function isFlush(hand: string[]): boolean {
 * before to get the value of the card.
 */
 function isStraight(hand: string[]): boolean {
+    if () {
+        return true
+    } else {
+        return false;
+    }
 
-    
-    return false;
 }
 
 /**
