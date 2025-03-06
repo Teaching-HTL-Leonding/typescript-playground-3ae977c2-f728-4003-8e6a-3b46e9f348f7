@@ -83,13 +83,16 @@ function splitCardsString(cards: string): string[] {
 
     for(let i = 0; i < cards.length; i++) {
         if(cards[i] === ",") {
-            spliCard.push(result)
+            spliCard.push(result);
             result = ""
         } else {
             result += cards[i];
         }
     }
    
+   if(cards) {
+    spliCard.push(result);
+   }
     return spliCard;
 }
 
@@ -103,9 +106,16 @@ function splitCardsString(cards: string): string[] {
 * of e.g. "0H" is 10, not 0!
 */
 function getCardValue(card: string): number {
+    let result = "";
+    let name: string;
+    let num = 0;
+
+    switch(card) {
+        
+    }
     // DELETE the following line and replace it with
     // a working solution for the function.
-    return 1;
+    return num
 }
 
 /**
