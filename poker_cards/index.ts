@@ -20,7 +20,7 @@ function setup() {
     //                 +---------- Change this line to test different hands
     //                 |           (e.g. royalFlush, straightFlush, fourOfAKind, ...)
     //                 v
-    const handString = random;
+    const handString = straight;
 
     hand = splitCardsString(handString);
 }
@@ -220,8 +220,8 @@ function getCounts(hand: string[]): number[] {
 */
 function isFlush(hand: string[]): boolean {
 
-    if (hand[0][1] === hand[1][1] && hand[0][1] === hand[2][1] && hand[0][1] === hand[3][1] && hand[0][1] === hand[4][1]) {
-        return true
+    if (hand[0][1] === hand[1][1] && hand[0][1] === hand[2][1] && hand[0][1] === hand[3][1] && hand[0][1] === hand[4][1] && hand[4][1] + 1 === hand[5][1]) {
+        return true;
     } else {
         return false;
     }
@@ -241,8 +241,12 @@ function isFlush(hand: string[]): boolean {
 * before to get the value of the card.
 */
 function isStraight(hand: string[]): boolean {
-    if () {
-        return true
+    if (getCardValue(hand[1]) - getCardValue(hand[0]) === 1
+        && getCardValue(hand[2]) - getCardValue(hand[1]) === 1
+        && getCardValue(hand[3]) - getCardValue(hand[2]) === 1
+        && getCardValue(hand[4]) - getCardValue(hand[3]) === 1
+        && getCardValue(hand[5]) - getCardValue(hand[4]) === 1) {
+        return true;
     } else {
         return false;
     }
