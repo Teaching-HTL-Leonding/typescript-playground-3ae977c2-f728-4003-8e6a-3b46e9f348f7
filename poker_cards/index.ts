@@ -78,12 +78,12 @@ function draw() {
 * The function splits the string into an array of cards.
 */
 function splitCardsString(cards: string): string[] {
-    const spliCard: string[] = []
+    const splitCard: string[] = []
     let result = "";
 
     for (let i = 0; i < cards.length; i++) {
         if (cards[i] === ",") {
-            spliCard.push(result);
+            splitCard.push(result);
             result = ""
         } else {
             result += cards[i];
@@ -91,9 +91,9 @@ function splitCardsString(cards: string): string[] {
     }
 
     if (cards) {
-        spliCard.push(result);
+        splitCard.push(result);
     }
-    return spliCard;
+    return splitCard;
 }
 
 /**
@@ -148,8 +148,7 @@ function getCardValue(card: string): number {
 * before to get the value of the card.
 */
 function getCardDescription(card: string): string {
-    let result = "";
-    let name: string
+    let name: string;
 
     switch (card[1]) {
         case "H":
@@ -178,6 +177,12 @@ function getCardDescription(card: string): string {
 * Tip: Consider using the functions that you wrote before.
 */
 function getHighestCard(hand: string[]): string {
+    let highestNum = 0;
+    let resut = "";
+
+    for(let i = 0; i < hand.length; i++) {
+        
+    }
     // DELETE the following line and replace it with
     // a working solution for the function.
     return getCardDescription('1H');
