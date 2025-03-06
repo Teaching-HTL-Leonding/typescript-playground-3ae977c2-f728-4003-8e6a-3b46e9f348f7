@@ -202,7 +202,7 @@ function getHighestCard(hand: string[]): string {
 * [0, 0, 0, 0, 0, 2, 0, 2, 1, 0].
 */
 function getCounts(hand: string[]): number[] {
-    let result: number[] = []
+    let result: number[] = [];
 
     for (let i = 0; i < hand.length; i++) {
         result[parseInt(hand[i][0])]++
@@ -236,8 +236,8 @@ function isFlush(hand: string[]): boolean {
 * before to get the value of the card.
 */
 function isStraight(hand: string[]): boolean {
-    // DELETE the following line and replace it with
-    // a working solution for the function.
+
+    
     return false;
 }
 
