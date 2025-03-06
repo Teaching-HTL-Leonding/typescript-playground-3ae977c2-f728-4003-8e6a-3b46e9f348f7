@@ -178,15 +178,17 @@ function getCardDescription(card: string): string {
 */
 function getHighestCard(hand: string[]): string {
     let highestNum = 0;
+    let index = 0;
 
     for (let i = 0; i < hand.length; i++) {
-        if (getCardValue[i] > highestNum) {
-            highestNum = getCardValue[i];
+        if (getCardValue(hand[i]) > highestNum) {
+            highestNum = getCardValue(hand[i]);
+            index = i;
 
         }
     }
     
-    return getCardDescription('1H');
+    return getCardDescription(hand[index]);
 }
 
 /**
@@ -200,8 +202,9 @@ function getHighestCard(hand: string[]): string {
 * [0, 0, 0, 0, 0, 2, 0, 2, 1, 0].
 */
 function getCounts(hand: string[]): number[] {
-    // DELETE the following line and replace it with
-    // a working solution for the function.
+    for(let i = 0; i < hand.length; i++) {
+        
+    }
     return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 }
 
