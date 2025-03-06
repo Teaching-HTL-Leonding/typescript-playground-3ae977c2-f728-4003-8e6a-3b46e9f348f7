@@ -15,7 +15,7 @@ function setup() {
     const pair = "5H,5D,6H,7D,8H";
     const highCard = "2H,3D,5S,7C,0H";
     const random = shuffleCards();
-    
+
     // Test the program with the example hands
     //                 +---------- Change this line to test different hands
     //                 |           (e.g. royalFlush, straightFlush, fourOfAKind, ...)
@@ -81,18 +81,18 @@ function splitCardsString(cards: string): string[] {
     const spliCard: string[] = []
     let result = "";
 
-    for(let i = 0; i < cards.length; i++) {
-        if(cards[i] === ",") {
+    for (let i = 0; i < cards.length; i++) {
+        if (cards[i] === ",") {
             spliCard.push(result);
             result = ""
         } else {
             result += cards[i];
         }
     }
-   
-   if(cards) {
-    spliCard.push(result);
-   }
+
+    if (cards) {
+        spliCard.push(result);
+    }
     return spliCard;
 }
 
@@ -106,16 +106,32 @@ function splitCardsString(cards: string): string[] {
 * of e.g. "0H" is 10, not 0!
 */
 function getCardValue(card: string): number {
-    let result = "";
-    let name: string;
-    let num = 0;
-
-    switch(card) {
-        
+    let result = 0;
+    
+    switch (card) {
+        case "1": result += 1;
+            break;
+        case "2": result += 2;
+            break;
+        case "3": result += 3;
+            break;
+        case "4": result += 4;
+            break;
+        case "5": result += 5;
+            break;
+        case "6": result += 6;
+            break;
+        case "7": result += 7;
+            break;
+        case "8": result += 8;
+            break;
+        case "9": result += 9;
+            break;
+        case "0": result += 10;
+            break;
     }
-    // DELETE the following line and replace it with
-    // a working solution for the function.
-    return num
+
+    return result
 }
 
 /**
