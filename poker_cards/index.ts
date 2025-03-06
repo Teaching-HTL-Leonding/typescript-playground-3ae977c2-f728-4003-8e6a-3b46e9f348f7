@@ -241,15 +241,11 @@ function isFlush(hand: string[]): boolean {
 * before to get the value of the card.
 */
 function isStraight(hand: string[]): boolean {
-    if (getCardValue(hand[1]) - getCardValue(hand[0]) === 1
+    return getCardValue(hand[1]) - getCardValue(hand[0]) === 1
         && getCardValue(hand[2]) - getCardValue(hand[1]) === 1
         && getCardValue(hand[3]) - getCardValue(hand[2]) === 1
         && getCardValue(hand[4]) - getCardValue(hand[3]) === 1
-        && getCardValue(hand[5]) - getCardValue(hand[4]) === 1) {
-        return true;
-    } else {
-        return false;
-    }
+    
 
 }
 
