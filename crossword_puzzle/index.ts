@@ -61,10 +61,12 @@ function drawCrosswordCells() {
     noFill();
 
     push();
-    translate(4 * cellSize, cellSize)
+    translate(4 * cellSize, 0);
+
     for (let i = 0; i < animals.length; i++) {
-        fill("yellow")
-        rect(0, 0, cellSize, cellSize)
+        fill("yellow");
+        rect(0, 0, cellSize, cellSize);
+        translate(0, cellSize);
     }
 
     pop();
