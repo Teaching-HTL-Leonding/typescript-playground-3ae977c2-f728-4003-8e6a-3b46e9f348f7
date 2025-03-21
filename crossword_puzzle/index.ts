@@ -8,7 +8,7 @@
 
 // Raw input data in format: animalName,startPosition,hint
 
-const crossword = `krebs    
+const crossword = `krebs,0,Schalentier    
 elefant,-1,Größtes Landtier  
 schlange,-4,Lautloser Jäger  
 papagei,-2,Bunter Sprachkünstler  
@@ -28,18 +28,16 @@ const animals: string[] = [];
 const startPosition: number[] = [];
 const hints: string[] = [];
 
+const cellHeight = 30;
 // The word that players need to completely reveal to win
 const solution = 'klapperschlange';
 
 // === Write the necessary code starting here ===
 function setup() {
-    createCanvas(600, 600)
-    parseCrossword();
+    createCanvas(1000, 1000)
 
-    for (let i = 0; i < animals.length; i++) {
-        fill("white");
-        text(`${animals}`, width / 2, 20)
-    }
+    parseCrossword();
+    drawCrosswordCells();
 
 }
 
@@ -53,5 +51,47 @@ function parseCrossword() {
         hints.push(parts[2])
     }
 
-    
+}
+
+const cellSize = 30;
+
+function drawCrosswordCells() {
+    stroke("white");
+    strokeWeight(1);
+    noFill();
+
+    push();
+    translate(4 * cellSize, cellSize)
+    for (let i = 0; i < animals.length; i++) {
+        fill("yellow")
+        rect(0, 0, cellSize, cellSize)
+    }
+
+    pop();
+
+    translate(4 * cellSize, 0);
+
+
+    for (let i = 0; i < animals.length; i++) {
+        push();
+        for (let j = 0; j < animals[i].length; j++) {
+            rect(
+                startPosition[i] * cellSize,
+                0,
+                cellSize,
+                cellSize);
+            translate(cellSize, 0)
+        }
+        pop();
+
+        translate(0, cellSize);
+    }
+
+    resetMatrix();
+
+    strokeWeight(0.8);
+
+    for (let i = 0; i < hints.length; i++) {
+        text(hints[i], 500, i * cellHeight + 25)
+    }
 }
