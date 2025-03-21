@@ -8,7 +8,7 @@
 
 // Raw input data in format: animalName,startPosition,hint
 
-const crossword = `krebs,0,Schalentier    
+const crossword = `krebs,0,Schalentie   
 elefant,-1,Größtes Landtier  
 schlange,-4,Lautloser Jäger  
 papagei,-2,Bunter Sprachkünstler  
