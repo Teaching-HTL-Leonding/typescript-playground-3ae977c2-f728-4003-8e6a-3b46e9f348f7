@@ -24,12 +24,30 @@ function setup() {
 }
 
 function draw() {
+
   background("lightblue");
+
 
   const speedX = stickPositionX / 5;
   const speedY = stickPositionY / 5;
+
+  const showingSpeedX = Math.round(speedX);
+  const showingSpeedXY = Math.round(speedY);
+
+  const showingFighterPositionX = Math.round(fighterPositionX);
+  const showingFighterPositionY = Math.round(fighterPositionY);
+
   fighterPositionX += speedX;
   fighterPositionY += speedY;
+
+  push();
+  translate(30, 450);
+  fill("black");
+  noStroke();
+  textSize(10);
+  text(`speed ${showingSpeedX} ${showingSpeedXY}`, 0, 0);
+  text(`fighterposition ${showingFighterPositionX} ${showingFighterPositionY}`, 0, 15);
+  pop();
 
   push();
   imageMode(CENTER);
@@ -46,10 +64,14 @@ function draw() {
   fill("black");
   noStroke();
   circle(stickPositionX, stickPositionY, stickRadius * 2);
+  pop();
 
-  fighterPositionX = constrain(fighterPositionX, -width / 2 + fighterDisplayWidth / 2, width / 2 - fighterDisplayWidth / 2);
-  fighterPositionY = constrain(fighterPositionY, -height / 2 + fighterDisplayHeight / 2, height / 2 - fighterDisplayHeight / 2);
-  
+  if (fighterPositionX <= -width / 2 + fighterDisplayWidth / 2) {
+    fighterPositionX = -width / 2 + fighterDisplayWidth / 2;
+  } else if (fighterPositionY >= width / 2 - fighterDisplayWidth / 2) {
+    fighterPositionX = width / 2;
+  }
+
 }
 
 function mousePressed() {
