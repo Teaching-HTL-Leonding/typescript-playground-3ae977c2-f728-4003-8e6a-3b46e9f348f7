@@ -38,37 +38,37 @@ function draw() {
   pop();
 
   push();
-  translate(width / 2, height - movementRadius);
-
-  fill("white");
+  translate(width / 2, height - 50);
   stroke("red");
+  fill("white");
   circle(0, 0, movementRadius * 2);
 
   fill("black");
   noStroke();
   circle(stickPositionX, stickPositionY, stickRadius * 2);
-  pop();
+
+  fighterPositionX = constrain(fighterPositionX, -width / 2 + fighterDisplayWidth / 2, width / 2 - fighterDisplayWidth / 2);
+  fighterPositionY = constrain(fighterPositionY, -height / 2 + fighterDisplayHeight / 2, height / 2 - fighterDisplayHeight / 2);
+  
 }
 
 function mousePressed() {
-  // Is the mouse click inside the joystick?
-  const dist = calcDistance(
-    stickPositionX, 
-    stickPositionY, 
-    mouseX - width / 2, 
+  const dist = isInside(
+    stickPositionX,
+    stickPositionY,
+    mouseX - width / 2,
     mouseY - (height - movementRadius));
-  isDragging = dist < stickRadius;
-  // if (dist <= stickRadius) {
-  //   // inside
-  //   isDragging = true;
-  // } else {
-  //   // outside
-  //   isDragging = false;
-  // }
+
+  if (dist <= stickRadius) {
+    isDragging = true;
+  } else {
+    isDragging = false;
+  }
+
 }
 
 function mouseDragged() {
-  if (isDragging) {
+  if (dist) {
     stickPositionX = mouseX - width / 2;
     stickPositionY = mouseY - (height - movementRadius);
   }
@@ -77,10 +77,9 @@ function mouseDragged() {
 function mouseReleased() {
 }
 
-// This method returns the distance between center of joystick
-// and mouse position.
-function calcDistance(jsX: number, jsY: number, mX: number, mY: number): number {
+function isInside(jsX: number, jsY: number, mX: number, mY: number): number {
   const dx = jsX - mX;
   const dy = jsY - mY;
   return Math.sqrt(dx * dx + dy * dy);
+
 }
