@@ -28,8 +28,8 @@ function draw() {
   background("lightblue");
 
 
-  const speedX = stickPositionX / 8;
-  const speedY = stickPositionY / 8;
+  const speedX = stickPositionX / 5;
+  const speedY = stickPositionY / 5;
 
   const showingSpeedX = Math.round(speedX);
   const showingSpeedXY = Math.round(speedY);
