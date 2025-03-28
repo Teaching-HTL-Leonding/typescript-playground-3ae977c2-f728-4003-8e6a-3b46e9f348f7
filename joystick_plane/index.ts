@@ -28,8 +28,8 @@ function draw() {
   background("lightblue");
 
 
-  const speedX = stickPositionX / 5;
-  const speedY = stickPositionY / 5;
+  const speedX = stickPositionX / 8;
+  const speedY = stickPositionY / 8;
 
   const showingSpeedX = Math.round(speedX);
   const showingSpeedXY = Math.round(speedY);
@@ -68,8 +68,14 @@ function draw() {
 
   if (fighterPositionX <= -width / 2 + fighterDisplayWidth / 2) {
     fighterPositionX = -width / 2 + fighterDisplayWidth / 2;
-  } else if (fighterPositionY >= width / 2 - fighterDisplayWidth / 2) {
-    fighterPositionX = width / 2;
+  } else if (fighterPositionX >= width / 2 - fighterDisplayWidth / 2) {
+    fighterPositionX = width / 2 - fighterDisplayWidth / 2;
+  }
+
+  if (fighterPositionY <= - height / 2 + fighterDisplayHeight / 2) {
+    fighterPositionY = - height / 2 + fighterDisplayHeight / 2;
+  } else if (fighterPositionY >= height / 2 - fighterDisplayHeight / 2) {
+    fighterPositionY = height / 2 - fighterDisplayHeight / 2;
   }
 
 }
