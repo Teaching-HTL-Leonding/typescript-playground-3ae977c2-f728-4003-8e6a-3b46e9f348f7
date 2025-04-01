@@ -25,6 +25,12 @@ function setup() {
 function draw() {
   background("lightblue");
 
+  const speedX = blackDotX / 5;
+  const speedY = blackDotY / 5;
+
+  fighterPositionX += speedX;
+  fighterPositionY += speedY;
+
   push();
   imageMode(CENTER);
   translate(width / 2 + fighterPositionX, height / 2 + fighterPositionY);
@@ -41,15 +47,28 @@ function draw() {
   noStroke();
   circle(blackDotX, blackDotY, blackDotRadius * 2);
   pop();
+
+  if (fighterPositionX <= - width / 2 + fighterDisplayWidth / 2) {
+    fighterPositionX = - width / 2 + fighterDisplayWidth / 2;
+  } else if (fighterPositionX >= width / 2 - fighterDisplayWidth / 2) {
+    fighterPositionX = width / 2 - fighterDisplayWidth / 2;
+  }
+
+  if (fighterPositionY <= - height / 2 + fighterDisplayHeight / 2) {
+    fighterPositionY = - height / 2 + fighterDisplayHeight / 2;
+  } else if (fighterPositionY >= height / 2 - fighterDisplayHeight / 2) {
+    fighterPositionY = height / 2 - fighterDisplayHeight / 2;
+  }
+
 }
 
 function mousePressed() {
   const dragged = isInside(blackDotX, blackDotY, mouseX - width / 2, mouseY - (height - bigCircleRadius));
 
   if (dragged <= blackDotRadius * 2) {
-    isDragging = false;
-  } else {
     isDragging = true;
+  } else {
+    isDragging = false;
   }
 }
 
@@ -58,9 +77,12 @@ function mouseDragged() {
     blackDotX = mouseX - width / 2;
     blackDotY = mouseY - (height - bigCircleRadius);
   }
+
+
 }
 
 function mouseReleased() {
+  isDragging = false
 }
 
 function isInside(jsX: number, jsY: number, mX: number, mY: number): number {
